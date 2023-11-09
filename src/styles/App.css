@@ -1,0 +1,33 @@
+
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.app-root {
+  display: flex;
+  flex-direction: row;
+}
+
+.cv-output {
+  background-color: white;
+}
+
+.editor {
+  min-width: 400px;
+  min-height: auto;
+}
+
+.editor-section {
+  background-color: white;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.cv-output {
+  min-width: 21cm;
+  min-height: 29.7cm;
+  margin-left: 16px;
+}
