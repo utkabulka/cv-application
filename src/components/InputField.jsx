@@ -12,8 +12,8 @@ function InputField({
   }
   return (
     <input
-      className='input-field-text'
       placeholder={label}
+      title={label}
       name={name}
       value={value}
       style={fontSize === 16 ? null : fieldStyle}

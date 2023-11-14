@@ -19,12 +19,13 @@
 
 .personal {
   background-color: aquamarine;
-  padding: 16px;
+  padding: 24px;
 }
 
 .other-personal-info {
   display: flex;
   flex-direction: row;
+  margin-top: 16px;
 }
 
 .name-role-block,

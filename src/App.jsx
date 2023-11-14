@@ -26,6 +26,7 @@ function App() {
       <div className='app-root'>
         <div className='cv'>
           <div className='personal'>
+            {/* TODO: smol icons */}
             <div className='name-role-block'>
               <InputField
                 label='Full name'
