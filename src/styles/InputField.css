@@ -7,14 +7,14 @@
   margin: 0;
   padding: 8px;
   text-align: left;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 16px;
 }
 
 .input-field-text {
-  background-color: #e8e8e8;
-  border: 1px solid #bbbbbb;
-  color: #2c2c2c;
+  background-color: #ffffff00;
+  border: none;
+  color: #080808;
   padding: 8px;
   border-radius: 10px;
   font-weight: 600;

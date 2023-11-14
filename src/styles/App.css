@@ -10,24 +10,13 @@
   flex-direction: row;
 }
 
-.cv-output {
+.cv {
   background-color: white;
-}
-
-.editor {
-  min-width: 400px;
-  min-height: auto;
-}
-
-.editor-section {
-  background-color: white;
-  border-radius: 10px;
-  padding: 16px;
-  margin-bottom: 16px;
-}
-
-.cv-output {
-  min-width: 21cm;
+    min-width: 21cm;
   min-height: 29.7cm;
   margin-left: 16px;
+}
+
+.general-info {
+  background-color: aquamarine;
 }

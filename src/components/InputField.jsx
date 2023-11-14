@@ -1,13 +1,19 @@
 import '../styles/InputField.css'
 
-function InputField({ label = 'Input field label' }) {
+function InputField({
+  label = 'Input field label',
+  name = '',
+  value = '',
+  onChange = () => {},
+}) {
   return (
-    <>
-      <div className="input-field">
-        <h1 className='input-field-label'>{label}</h1>
-        <input className='input-field-text'></input>
-      </div>
-    </>
+    <input
+      className='input-field-text'
+      placeholder={label}
+      name={name}
+      value={value}
+      onChange={onChange}
+    ></input>
   )
 }
 
