@@ -5,7 +5,7 @@ function TextArea({
   value = 'Default value',
   name = '',
   width = 400,
-  height = 150,
+  height = 100,
   onChange = () => {},
 }) {
   width += 'px'

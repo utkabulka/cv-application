@@ -93,7 +93,6 @@ function App() {
           </div>
           <div className='section'>
             <Header text='Summary' />
-            {/* TODO: bruh make a component or modify InputField for this use */}
             <TextArea
               label='Your CV summary'
               value={summary}

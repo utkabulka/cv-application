@@ -9,7 +9,7 @@ const DefaultData = {
     [Keys.WEBSITE]: 'https://theodinproject.com',
     [Keys.LOCATION]: 'Somecity, Somecountry',
   },
-  summary: `Alice Bobinson, the Full-stack developer. This is a summary. I have no idea what to write in here. So I'll just write something.`,
+  summary: `Alice Bobinson, the Full-stack developer. This is a summary. I have no idea what to write in here. So I'll just write something. This is something. I am writing some things and these things doesn't make any sense.`,
 }
 
 export default DefaultData
