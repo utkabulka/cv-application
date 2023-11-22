@@ -5,17 +5,15 @@ import HomeIcon from '@mui/icons-material/Home'
 import PhoneIcon from '@mui/icons-material/Phone'
 import RoomIcon from '@mui/icons-material/Room'
 import InputField from './components/InputField'
+import * as Colors from './constants/Colors'
+import DefaultData from './constants/DefaultData'
+import * as Keys from './constants/Keys'
 import './styles/App.css'
 
 function App() {
-  const [personalInformation, setPersonalInformation] = useState({
-    fullName: 'Alice Bobinson',
-    role: 'Full-stack developer',
-    email: 'bobinson.a@pochta.ru',
-    phoneNumber: '+995 228 044 122',
-    website: 'https://theodinproject.com',
-    location: 'Somecity, Somecountry',
-  })
+  const [personalInformation, setPersonalInformation] = useState(
+    DefaultData.personalInformation
+  )
 
   function handlePersonalInformationChange(e) {
     setPersonalInformation({
@@ -32,18 +30,18 @@ function App() {
             <div className='name-role-block'>
               <InputField
                 label='Full name'
-                name='fullName'
-                fontSize={28}
-                color='#F7F7F7'
-                value={personalInformation.fullName}
+                name={Keys.FULL_NAME}
+                fontSize={32}
+                color={Colors.WHITE}
+                value={personalInformation[Keys.FULL_NAME]}
                 onChange={handlePersonalInformationChange}
               />
               <InputField
                 label='Role'
-                name='role'
-                fontSize={20}
-                color='#F7F7F7'
-                value={personalInformation.role}
+                name={Keys.ROLE}
+                fontSize={24}
+                color={Colors.WHITE}
+                value={personalInformation[Keys.ROLE]}
                 onChange={handlePersonalInformationChange}
               />
             </div>
@@ -51,36 +49,36 @@ function App() {
               <div className='contacts-block'>
                 <InputField
                   label='E-mail'
-                  name='email'
-                  color='#F7F7F7'
+                  name={Keys.EMAIL}
+                  color={Colors.WHITE}
                   icon={EmailIcon}
-                  value={personalInformation.email}
+                  value={personalInformation[Keys.EMAIL]}
                   onChange={handlePersonalInformationChange}
                 />
                 <InputField
                   label='Phone number'
-                  name='phoneNumber'
-                  color='#F7F7F7'
+                  name={Keys.PHONE_NUMBER}
+                  color={Colors.WHITE}
                   icon={PhoneIcon}
-                  value={personalInformation.phoneNumber}
+                  value={personalInformation[Keys.PHONE_NUMBER]}
                   onChange={handlePersonalInformationChange}
                 />
               </div>
               <div className='website-location-block'>
                 <InputField
                   label='Website'
-                  name='website'
-                  color='#F7F7F7'
+                  name={Keys.WEBSITE}
+                  color={Colors.WHITE}
                   icon={HomeIcon}
-                  value={personalInformation.website}
+                  value={personalInformation[Keys.WEBSITE]}
                   onChange={handlePersonalInformationChange}
                 />
                 <InputField
                   label='Location'
-                  name='location'
-                  color='#F7F7F7'
+                  name={Keys.LOCATION}
+                  color={Colors.WHITE}
                   icon={RoomIcon}
-                  value={personalInformation.location}
+                  value={personalInformation[Keys.LOCATION]}
                   onChange={handlePersonalInformationChange}
                 />
               </div>
