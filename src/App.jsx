@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
-import InputField from './components/InputField'
-import SectionHeader from './components/SectionHeader'
-import './styles/App.css'
+import AddHomeIcon from '@mui/icons-material/AddHome';
+import InputField from './components/InputField';
+import './styles/App.css';
 
 function App() {
   const [personalInformation, setPersonalInformation] = useState({
@@ -73,6 +73,9 @@ function App() {
                 />
               </div>
             </div>
+          </div>
+          <div className='section'>
+
           </div>
         </div>
       </div>
