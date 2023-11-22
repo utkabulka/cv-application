@@ -6,6 +6,7 @@ import PhoneIcon from '@mui/icons-material/Phone'
 import RoomIcon from '@mui/icons-material/Room'
 import Header from './components/Header'
 import InputField from './components/InputField'
+import TextArea from './components/TextArea'
 import * as Colors from './constants/Colors'
 import DefaultData from './constants/DefaultData'
 import * as Keys from './constants/Keys'
@@ -93,9 +94,11 @@ function App() {
           <div className='section'>
             <Header text='Summary' />
             {/* TODO: bruh make a component or modify InputField for this use */}
-            <textarea
+            <TextArea
+              label='Your CV summary'
               value={summary}
               name={Keys.SUMMARY}
+              width={700}
               onChange={handleSummaryChange}
             />
             <hr />

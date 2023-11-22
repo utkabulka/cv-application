@@ -1,0 +1,9 @@
+textarea {
+  background-color: #ffffff00;
+  border: none;
+  color: #080808;
+  margin: 4px;
+  font-weight: 500;
+  font-size: 16px;
+  flex: 1;
+}
