@@ -8,6 +8,10 @@ input {
   flex: 1;
 }
 
+input::placeholder {
+  color: #f7f7f7b0;
+}
+
 .input-field-wrapper {
   display: flex;
   flex-direction: row;

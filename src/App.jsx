@@ -4,6 +4,7 @@ import EmailIcon from '@mui/icons-material/Email'
 import HomeIcon from '@mui/icons-material/Home'
 import PhoneIcon from '@mui/icons-material/Phone'
 import RoomIcon from '@mui/icons-material/Room'
+import Header from './components/Header'
 import InputField from './components/InputField'
 import * as Colors from './constants/Colors'
 import DefaultData from './constants/DefaultData'
@@ -14,12 +15,17 @@ function App() {
   const [personalInformation, setPersonalInformation] = useState(
     DefaultData.personalInformation
   )
+  const [summary, setSummary] = useState(DefaultData.summary)
 
   function handlePersonalInformationChange(e) {
     setPersonalInformation({
       ...personalInformation,
       [e.target.name]: e.target.value,
     })
+  }
+
+  function handleSummaryChange(e) {
+    setSummary(e.target.value)
   }
 
   return (
@@ -84,7 +90,16 @@ function App() {
               </div>
             </div>
           </div>
-          <div className='section'></div>
+          <div className='section'>
+            <Header text='Summary' />
+            {/* TODO: bruh make a component or modify InputField for this use */}
+            <textarea
+              value={summary}
+              name={Keys.SUMMARY}
+              onChange={handleSummaryChange}
+            />
+            <hr />
+          </div>
         </div>
       </div>
     </>
