@@ -4,7 +4,6 @@ import EmailIcon from '@mui/icons-material/Email'
 import HomeIcon from '@mui/icons-material/Home'
 import PhoneIcon from '@mui/icons-material/Phone'
 import RoomIcon from '@mui/icons-material/Room'
-import { SvgIcon } from '@mui/material'
 import InputField from './components/InputField'
 import './styles/App.css'
 
@@ -30,9 +29,7 @@ function App() {
       <div className='app-root'>
         <div className='cv'>
           <div className='personal'>
-            {/* TODO: smol icons */}
             <div className='name-role-block'>
-              {/* <SvgIcon component={AddHomeIcon} /> */}
               <InputField
                 label='Full name'
                 name='fullName'
