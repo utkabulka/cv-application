@@ -37,6 +37,7 @@ function App() {
                 label='Full name'
                 name='fullName'
                 fontSize={28}
+                color='#F7F7F7'
                 value={personalInformation.fullName}
                 onChange={handlePersonalInformationChange}
               />
@@ -44,6 +45,7 @@ function App() {
                 label='Role'
                 name='role'
                 fontSize={20}
+                color='#F7F7F7'
                 value={personalInformation.role}
                 onChange={handlePersonalInformationChange}
               />
@@ -53,6 +55,7 @@ function App() {
                 <InputField
                   label='E-mail'
                   name='email'
+                  color='#F7F7F7'
                   icon={EmailIcon}
                   value={personalInformation.email}
                   onChange={handlePersonalInformationChange}
@@ -60,6 +63,7 @@ function App() {
                 <InputField
                   label='Phone number'
                   name='phoneNumber'
+                  color='#F7F7F7'
                   icon={PhoneIcon}
                   value={personalInformation.phoneNumber}
                   onChange={handlePersonalInformationChange}
@@ -69,6 +73,7 @@ function App() {
                 <InputField
                   label='Website'
                   name='website'
+                  color='#F7F7F7'
                   icon={HomeIcon}
                   value={personalInformation.website}
                   onChange={handlePersonalInformationChange}
@@ -76,6 +81,7 @@ function App() {
                 <InputField
                   label='Location'
                   name='location'
+                  color='#F7F7F7'
                   icon={RoomIcon}
                   value={personalInformation.location}
                   onChange={handlePersonalInformationChange}
