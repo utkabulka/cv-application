@@ -4,6 +4,7 @@ import EmailIcon from '@mui/icons-material/Email'
 import HomeIcon from '@mui/icons-material/Home'
 import PhoneIcon from '@mui/icons-material/Phone'
 import RoomIcon from '@mui/icons-material/Room'
+import ExperienceSection from './components/ExperienceSection'
 import Header from './components/Header'
 import InputField from './components/InputField'
 import TextArea from './components/TextArea'
@@ -14,9 +15,10 @@ import './styles/App.css'
 
 function App() {
   const [personalInformation, setPersonalInformation] = useState(
-    DefaultData.personalInformation
+    DefaultData.initialPersonalInformation
   )
   const [summary, setSummary] = useState(DefaultData.summary)
+  const [workExperience, setWorkExperience] = useState(DefaultData[Keys.WORK_EXPERIENCE])
 
   function handlePersonalInformationChange(e) {
     setPersonalInformation({
@@ -101,6 +103,10 @@ function App() {
               onChange={handleSummaryChange}
             />
             <hr />
+          </div>
+          <div className='section'>
+            <Header text='Experience' />
+            <ExperienceSection data={workExperience} />
           </div>
         </div>
       </div>

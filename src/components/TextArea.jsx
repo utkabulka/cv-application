@@ -20,9 +20,7 @@ function TextArea({
   }
 
   return (
-    <textarea placeholder={label} name={name} onChange={onChange} style={style}>
-      {value}
-    </textarea>
+    <textarea value={value} placeholder={label} name={name} onChange={onChange} style={style} />
   )
 }
 
