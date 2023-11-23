@@ -9,13 +9,17 @@ function ExperienceBlock({ experience, onChange = () => {} }) {
         label='Job title'
         value={experience[Keys.JOB_TITLE]}
         name={Keys.JOB_TITLE}
-        onChange={onChange}
+        onChange={(e) => {
+          onChange(experience[Keys.ID], Keys.JOB_TITLE, e.target.value)
+        }}
       />
       <InputField
         label='Where did you work?'
         value={experience[Keys.WORK_PLACE]}
         name={Keys.WORK_PLACE}
-        onChange={onChange}
+        onChange={(e) => {
+          onChange(experience[Keys.ID], Keys.WORK_PLACE, e.target.value)
+        }}
       />
     </div>
   )

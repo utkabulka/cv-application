@@ -34,7 +34,17 @@ function App() {
     setSummary(e.target.value)
   }
 
-  function handleWorkExperienceChange(e) {}
+  function handleWorkExperienceChange(workExperienceId, fieldName, value) {
+    setWorkExperience(
+      workExperience.map((experience) => {
+        if (experience.id === workExperienceId) {
+          return { ...experience, [fieldName]: value }
+        } else {
+          return experience
+        }
+      })
+    )
+  }
 
   return (
     <>
