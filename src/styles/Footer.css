@@ -1,0 +1,16 @@
+.footer {
+  display: flex;
+  flex: 0;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.footer-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+}

@@ -5,6 +5,7 @@ import HomeIcon from '@mui/icons-material/Home'
 import PhoneIcon from '@mui/icons-material/Phone'
 import RoomIcon from '@mui/icons-material/Room'
 import ExperienceSection from './components/ExperienceSection'
+import Footer from './components/Footer'
 import Header from './components/Header'
 import InputField from './components/InputField'
 import TextArea from './components/TextArea'
@@ -116,6 +117,7 @@ function App() {
             />
           </div>
         </div>
+        <Footer />
       </div>
     </>
   )
