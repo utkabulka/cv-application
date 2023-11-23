@@ -8,14 +8,16 @@ function InputField({
   value = '',
   icon = null,
   fontSize = null,
+  fontWeight = null,
   color = null,
   onChange = () => {},
 }) {
   let fieldStyle = null
-  if (fontSize != null || color != null) {
+  if (fontSize != null || color != null || fontWeight != null) {
     fieldStyle = {
       color: color,
       fontSize: fontSize + 'px',
+      fontWeight: fontWeight,
     }
   }
   return (
@@ -38,6 +40,7 @@ InputField.propTypes = {
   value: PropTypes.string,
   icon: PropTypes.object,
   fontSize: PropTypes.number,
+  fontWeight: PropTypes.number,
   color: PropTypes.string,
   onChange: PropTypes.func.isRequired,
 }

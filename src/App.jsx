@@ -114,7 +114,6 @@ function App() {
               label='Your CV summary'
               value={summary}
               name={Keys.SUMMARY}
-              width={700}
               onChange={handleSummaryChange}
             />
             <hr />
