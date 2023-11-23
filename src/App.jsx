@@ -18,7 +18,9 @@ function App() {
     DefaultData.initialPersonalInformation
   )
   const [summary, setSummary] = useState(DefaultData.summary)
-  const [workExperience, setWorkExperience] = useState(DefaultData[Keys.WORK_EXPERIENCE])
+  const [workExperience, setWorkExperience] = useState(
+    DefaultData[Keys.WORK_EXPERIENCE]
+  )
 
   function handlePersonalInformationChange(e) {
     setPersonalInformation({
@@ -30,6 +32,8 @@ function App() {
   function handleSummaryChange(e) {
     setSummary(e.target.value)
   }
+
+  function handleWorkExperienceChange(e) {}
 
   return (
     <>
@@ -106,7 +110,10 @@ function App() {
           </div>
           <div className='section'>
             <Header text='Experience' />
-            <ExperienceSection data={workExperience} />
+            <ExperienceSection
+              data={workExperience}
+              onChange={handleWorkExperienceChange}
+            />
           </div>
         </div>
       </div>

@@ -1,8 +1,9 @@
+import PropTypes from 'prop-types'
 import '../styles/TextArea.css'
 
 function TextArea({
   label = 'Text area label',
-  value = 'Default value',
+  value = '',
   name = '',
   width = 400,
   height = 100,
@@ -20,8 +21,22 @@ function TextArea({
   }
 
   return (
-    <textarea value={value} placeholder={label} name={name} onChange={onChange} style={style} />
+    <textarea
+      value={value}
+      placeholder={label}
+      name={name}
+      onChange={onChange}
+      style={style}
+    />
   )
+}
+TextArea.propTypes = {
+  label: PropTypes.string.isRequired,
+  value: PropTypes.string,
+  name: PropTypes.string,
+  width: PropTypes.number,
+  height: PropTypes.number,
+  onChange: PropTypes.func.isRequired,
 }
 
 export default TextArea

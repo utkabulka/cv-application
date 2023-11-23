@@ -1,4 +1,5 @@
 import { SvgIcon } from '@mui/material'
+import PropTypes from 'prop-types'
 import '../styles/InputField.css'
 
 function InputField({
@@ -31,7 +32,14 @@ function InputField({
     </div>
   )
 }
-
-InputField.defaultProps = {}
+InputField.propTypes = {
+  label: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  value: PropTypes.string,
+  icon: PropTypes.object,
+  fontSize: PropTypes.number,
+  color: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+}
 
 export default InputField
