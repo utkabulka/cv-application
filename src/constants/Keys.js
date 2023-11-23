@@ -1,4 +1,5 @@
 export const SUMMARY = 'summary'
+export const ID = 'id'
 
 // common
 export const LOCATION = 'location'

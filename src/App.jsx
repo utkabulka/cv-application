@@ -18,7 +18,7 @@ function App() {
   const [personalInformation, setPersonalInformation] = useState(
     DefaultData.initialPersonalInformation
   )
-  const [summary, setSummary] = useState(DefaultData.summary)
+  const [summary, setSummary] = useState(DefaultData[Keys.SUMMARY])
   const [workExperience, setWorkExperience] = useState(
     DefaultData[Keys.WORK_EXPERIENCE]
   )

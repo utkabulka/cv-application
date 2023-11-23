@@ -1,12 +1,19 @@
 import PropTypes from 'prop-types'
-import InputField from './InputField'
+import * as Keys from '../constants/Keys'
+import ExperienceBlock from './ExperienceBlock'
 
 function ExperienceSection({ data = [], onChange = () => {} }) {
   console.log(data)
   return (
     <>
-      <InputField label='Job title' onChange={onChange} />
-      <InputField label='Work place' onChange={onChange} />
+      {data.map((experience) => (
+        // <li key={experience['id']}>{experience[Keys.JOB_TITLE]}</li>
+        <ExperienceBlock
+          key={experience[Keys.ID]}
+          experience={experience}
+          onChange={onChange}
+        />
+      ))}
     </>
   )
 }
