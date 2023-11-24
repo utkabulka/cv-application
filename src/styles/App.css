@@ -14,6 +14,7 @@
   flex-direction: row;
 }
 
+.navigation,
 .editor-section,
 .cv-output {
   box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000033;
@@ -27,6 +28,7 @@
 .editor-section {
   border-radius: 5px;
   padding: 20px;
+  margin-bottom: 16px;
 }
 
 .cv-output {
