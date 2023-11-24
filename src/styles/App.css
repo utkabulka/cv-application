@@ -15,6 +15,11 @@
 }
 
 .navigation,
+.editor-section {
+  border-radius: 12px;
+}
+
+.navigation,
 .editor-section,
 .cv-output {
   box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000033;
@@ -26,8 +31,7 @@
 }
 
 .editor-section {
-  border-radius: 5px;
-  padding: 20px;
+  padding: 8px 20px 8px 20px;
   margin-bottom: 16px;
 }
 
@@ -39,7 +43,7 @@
 }
 
 .personal {
-  padding: 32px 48px 32px 48px;
+  padding: 32px 32px 32px 32px;
 }
 .section {
   padding: 0 48px 0 48px;

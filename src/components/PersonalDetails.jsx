@@ -9,7 +9,7 @@ import InputField from './InputField'
 import TextArea from './TextArea'
 
 function PersonalDetails({
-  onInformationChanged = () => {},
+  onInformationChanged: onDetailsChanged = () => {},
   onSummaryChanged = () => {},
   personalInformation = [],
   summary = '',
@@ -18,13 +18,15 @@ function PersonalDetails({
     <>
       <div className='editor-section'>
         <Header text='Personal details' />
+      </div>
+      <div className='editor-section'>
         <InputField
           label='Full name'
           placeholder={`What's your name?`}
           isRequired={true}
           name={Keys.FULL_NAME}
           value={personalInformation[Keys.FULL_NAME]}
-          onChange={onInformationChanged}
+          onChange={onDetailsChanged}
         />
         <InputField
           label='Role'
@@ -32,7 +34,7 @@ function PersonalDetails({
           isRequired={true}
           name={Keys.ROLE}
           value={personalInformation[Keys.ROLE]}
-          onChange={onInformationChanged}
+          onChange={onDetailsChanged}
         />
         <InputField
           label='Location'
@@ -41,15 +43,7 @@ function PersonalDetails({
           name={Keys.LOCATION}
           icon={RoomIcon}
           value={personalInformation[Keys.LOCATION]}
-          onChange={onInformationChanged}
-        />
-        <InputField
-          label='Website'
-          placeholder={`Your website, if you have one`}
-          name={Keys.WEBSITE}
-          icon={HomeIcon}
-          value={personalInformation[Keys.WEBSITE]}
-          onChange={onInformationChanged}
+          onChange={onDetailsChanged}
         />
         <InputField
           label='E-mail'
@@ -57,7 +51,7 @@ function PersonalDetails({
           name={Keys.EMAIL}
           icon={EmailIcon}
           value={personalInformation[Keys.EMAIL]}
-          onChange={onInformationChanged}
+          onChange={onDetailsChanged}
         />
         <InputField
           label='Phone number'
@@ -65,7 +59,15 @@ function PersonalDetails({
           name={Keys.PHONE_NUMBER}
           icon={PhoneIcon}
           value={personalInformation[Keys.PHONE_NUMBER]}
-          onChange={onInformationChanged}
+          onChange={onDetailsChanged}
+        />
+        <InputField
+          label='Website'
+          placeholder={`Your website, if you have one`}
+          name={Keys.WEBSITE}
+          icon={HomeIcon}
+          value={personalInformation[Keys.WEBSITE]}
+          onChange={onDetailsChanged}
         />
       </div>
       <div className='editor-section'>
@@ -84,7 +86,7 @@ function PersonalDetails({
 PersonalDetails.propTypes = {
   onInformationChanged: PropTypes.func.isRequired,
   onSummaryChanged: PropTypes.func.isRequired,
-  personalInformation: PropTypes.array.isRequired,
+  personalInformation: PropTypes.object.isRequired,
   summary: PropTypes.string.isRequired,
 }
 

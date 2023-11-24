@@ -1,17 +1,21 @@
 import { useState } from 'react'
 
 import CVOutput from './components/CVOutput'
-import ExperienceSection from './components/ExperienceSection'
 import Footer from './components/Footer'
-import Header from './components/Header'
 import Navigation from './components/Navigation'
 import PersonalDetails from './components/PersonalDetails'
+import WorkExperience from './components/WorkExperience'
 import DefaultData from './constants/DefaultData'
 import * as Keys from './constants/Keys'
+import * as NavigationTabs from './constants/NavigationTabs'
 import './styles/App.css'
 
 function App() {
-  const [personalInformation, setPersonalInformation] = useState(
+  const [selectedTab, setSelectedTab] = useState(
+    NavigationTabs.PERSONAL_INFORMATION
+  )
+
+  const [personalDetails, setPersonalInformation] = useState(
     DefaultData.initialPersonalInformation
   )
   const [summary, setSummary] = useState(DefaultData[Keys.SUMMARY])
@@ -19,9 +23,14 @@ function App() {
     DefaultData[Keys.WORK_EXPERIENCE]
   )
 
-  function handlePersonalInformationChange(e) {
+  function handleSelectedTabChange(newTab) {
+    setSelectedTab(newTab)
+    console.log(`New tab: ${newTab}`)
+  }
+
+  function handlePersonalDetailsChange(e) {
     setPersonalInformation({
-      ...personalInformation,
+      ...personalDetails,
       [e.target.name]: e.target.value,
     })
   }
@@ -47,20 +56,24 @@ function App() {
       <div className='app-root'>
         <div className='cv'>
           <div className='editor'>
-            <Navigation />
-            <PersonalDetails
-              onInformationChanged={handlePersonalInformationChange}
-              onSummaryChanged={handleSummaryChange}
-              personalInformation={personalInformation}
-              summary={summary}
+            <Navigation
+              onNavigationClicked={handleSelectedTabChange}
+              selectedTab={selectedTab}
             />
-            <div className='editor-section'>
-              <Header text='Experience' />
-              <ExperienceSection
-                data={workExperience}
-                onChange={handleWorkExperienceChange}
+            {selectedTab === NavigationTabs.PERSONAL_INFORMATION && (
+              <PersonalDetails
+                onInformationChanged={handlePersonalDetailsChange}
+                onSummaryChanged={handleSummaryChange}
+                personalInformation={personalDetails}
+                summary={summary}
               />
-            </div>
+            )}
+            {selectedTab === NavigationTabs.WORK_EXPERIENCE && (
+              <WorkExperience
+                workExperience={workExperience}
+                onWorkExpreienceChanged={handleWorkExperienceChange}
+              />
+            )}
             <Footer />
           </div>
           <CVOutput />

@@ -8,25 +8,35 @@ import Button from '../components/Button'
 import * as NavigationTabs from '../constants/NavigationTabs'
 import '../styles/Navigation.css'
 
-function Navigation({ onNavigationClicked = () => {} }) {
+function Navigation({ onNavigationClicked = () => {}, selectedTab = '' }) {
   return (
     <div className='navigation'>
       <Button
         icon={AccountCircleIcon}
-        onClick={onNavigationClicked(NavigationTabs.PERSONAL_INFORMATION)}
+        onClick={() => onNavigationClicked(NavigationTabs.PERSONAL_INFORMATION)}
       />
       <Button
         icon={WorkIcon}
-        onClick={onNavigationClicked(NavigationTabs.WORK_EXPERIENCE)}
+        onClick={() => onNavigationClicked(NavigationTabs.WORK_EXPERIENCE)}
       />
-      <Button icon={SchoolIcon} />
-      <Button icon={SettingsIcon} />
-      <Button icon={PrintIcon} />
+      <Button
+        icon={SchoolIcon}
+        onClick={() => onNavigationClicked(NavigationTabs.WORK_EXPERIENCE)}
+      />
+      <Button
+        icon={SettingsIcon}
+        onClick={() => onNavigationClicked(NavigationTabs.WORK_EXPERIENCE)}
+      />
+      <Button
+        icon={PrintIcon}
+        onClick={() => onNavigationClicked(NavigationTabs.WORK_EXPERIENCE)}
+      />
     </div>
   )
 }
 Navigation.propTypes = {
   onNavigationClicked: PropTypes.func.isRequired,
+  selectedTab: PropTypes.string,
 }
 
 export default Navigation

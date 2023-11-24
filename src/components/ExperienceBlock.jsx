@@ -5,7 +5,7 @@ import TextArea from './TextArea'
 
 function ExperienceBlock({ experience, onChange = () => {} }) {
   return (
-    <div className='experience-block'>
+    <div className='editor-section'>
       <InputField
         label='Job title'
         value={experience[Keys.JOB_TITLE]}

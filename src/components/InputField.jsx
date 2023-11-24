@@ -1,4 +1,3 @@
-import { SvgIcon } from '@mui/material'
 import PropTypes from 'prop-types'
 import '../styles/InputField.css'
 
@@ -8,28 +7,22 @@ function InputField({
   placeholder = null,
   name = '',
   value = '',
-  icon = null,
   onChange = () => {},
 }) {
   return (
     <div className='input-field'>
-      <div className='icon-wrapper'>
-        {icon != null ? <SvgIcon component={icon} /> : null}
+      <div>
+        {label}
+        {isRequired ? <span className='required'>required</span> : ''}
       </div>
-      <div className='input-field-wrapper'>
-        <div>
-          {label}
-          {isRequired ? <span className='required'>required</span> : ''}
-        </div>
-        <input
-          className={isRequired && value == '' ? 'empty-required-input' : null}
-          placeholder={placeholder == null ? label : placeholder}
-          title={placeholder == null ? label : placeholder}
-          name={name}
-          value={value}
-          onChange={onChange}
-        ></input>
-      </div>
+      <input
+        className={isRequired && value == '' ? 'empty-required-input' : null}
+        placeholder={placeholder == null ? label : placeholder}
+        title={placeholder == null ? label : placeholder}
+        name={name}
+        value={value}
+        onChange={onChange}
+      />
     </div>
   )
 }
