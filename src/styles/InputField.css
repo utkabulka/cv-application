@@ -12,7 +12,14 @@ input {
 }
 
 input::placeholder {
-  color: #00000069;
+  color: #0000008e;
+}
+
+.empty-required-input {
+  border: 1px solid #960000;
+}
+.empty-required-input::placeholder {
+  color: #9600008e;
 }
 
 .input-field {
@@ -36,5 +43,5 @@ input::placeholder {
 .required {
   margin-left: 8px;
   font-size: 12px;
-  color: #750000;
+  color: #960000;
 }

@@ -17,8 +17,12 @@ function InputField({
         {icon != null ? <SvgIcon component={icon} /> : null}
       </div>
       <div className='input-field-wrapper'>
-        <div>{label}{isRequired ? <span className='required'>requried</span> : ''}</div>
+        <div>
+          {label}
+          {isRequired ? <span className='required'>required</span> : ''}
+        </div>
         <input
+          className={isRequired && value == '' ? 'empty-required-input' : null}
           placeholder={placeholder == null ? label : placeholder}
           title={placeholder == null ? label : placeholder}
           name={name}
