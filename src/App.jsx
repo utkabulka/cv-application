@@ -9,7 +9,6 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import InputField from './components/InputField'
 import TextArea from './components/TextArea'
-import * as Colors from './constants/Colors'
 import DefaultData from './constants/DefaultData'
 import * as Keys from './constants/Keys'
 import './styles/App.css'
@@ -55,18 +54,40 @@ function App() {
               <Header text='Personal details' />
               <InputField
                 label='Full name'
+                placeholder={`What's your name?`}
+                isRequired={true}
                 name={Keys.FULL_NAME}
                 value={personalInformation[Keys.FULL_NAME]}
                 onChange={handlePersonalInformationChange}
               />
               <InputField
                 label='Role'
+                placeholder={`What is your desired role?`}
+                isRequired={true}
                 name={Keys.ROLE}
                 value={personalInformation[Keys.ROLE]}
                 onChange={handlePersonalInformationChange}
               />
               <InputField
+                label='Location'
+                placeholder={`Where do you live?`}
+                isRequired={true}
+                name={Keys.LOCATION}
+                icon={RoomIcon}
+                value={personalInformation[Keys.LOCATION]}
+                onChange={handlePersonalInformationChange}
+              />
+              <InputField
+                label='Website'
+                placeholder={`Your website, if you have one`}
+                name={Keys.WEBSITE}
+                icon={HomeIcon}
+                value={personalInformation[Keys.WEBSITE]}
+                onChange={handlePersonalInformationChange}
+              />
+              <InputField
                 label='E-mail'
+                placeholder={`Your e-mail`}
                 name={Keys.EMAIL}
                 icon={EmailIcon}
                 value={personalInformation[Keys.EMAIL]}
@@ -74,23 +95,10 @@ function App() {
               />
               <InputField
                 label='Phone number'
+                placeholder={`Your phone number`}
                 name={Keys.PHONE_NUMBER}
                 icon={PhoneIcon}
                 value={personalInformation[Keys.PHONE_NUMBER]}
-                onChange={handlePersonalInformationChange}
-              />
-              <InputField
-                label='Website'
-                name={Keys.WEBSITE}
-                icon={HomeIcon}
-                value={personalInformation[Keys.WEBSITE]}
-                onChange={handlePersonalInformationChange}
-              />
-              <InputField
-                label='Location'
-                name={Keys.LOCATION}
-                icon={RoomIcon}
-                value={personalInformation[Keys.LOCATION]}
                 onChange={handlePersonalInformationChange}
               />
             </div>

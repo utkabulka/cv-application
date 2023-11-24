@@ -4,6 +4,8 @@ import '../styles/InputField.css'
 
 function InputField({
   label = 'Input field label',
+  isRequired = false,
+  placeholder = null,
   name = '',
   value = '',
   icon = null,
@@ -15,10 +17,10 @@ function InputField({
         {icon != null ? <SvgIcon component={icon} /> : null}
       </div>
       <div className='input-field-wrapper'>
-        <div>{label}</div>
+        <div>{label}{isRequired ? <span className='required'>requried</span> : ''}</div>
         <input
-          placeholder={label}
-          title={label}
+          placeholder={placeholder == null ? label : placeholder}
+          title={placeholder == null ? label : placeholder}
           name={name}
           value={value}
           onChange={onChange}
@@ -29,6 +31,8 @@ function InputField({
 }
 InputField.propTypes = {
   label: PropTypes.string.isRequired,
+  isRequired: PropTypes.bool,
+  placeholder: PropTypes.string,
   name: PropTypes.string,
   value: PropTypes.string,
   icon: PropTypes.object,
