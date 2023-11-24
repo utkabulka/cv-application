@@ -10,7 +10,26 @@
 }
 
 .cv {
+  display: flex;
+  flex-direction: row;
+}
+
+.editor-section,
+.cv-output {
+  box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000033;
   background-color: white;
+}
+
+.editor {
+  min-width: 400px;
+}
+
+.editor-section {
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.cv-output {
   min-width: 21cm;
   min-height: 29.7cm;
   margin-left: 16px;
