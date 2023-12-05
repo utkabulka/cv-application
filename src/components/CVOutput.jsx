@@ -1,3 +1,7 @@
+import EmailIcon from '@mui/icons-material/Email'
+import HomeIcon from '@mui/icons-material/Home'
+import PhoneIcon from '@mui/icons-material/Phone'
+import PlaceIcon from '@mui/icons-material/Place'
 import PropTypes from 'prop-types'
 import * as Keys from '../constants/Keys'
 import '../styles/CVOutput.css'
@@ -10,18 +14,22 @@ function CVOutput({ personalDetails = [], summary = '', workExperience = [] }) {
         <h2>{personalDetails[Keys.ROLE]}</h2>
         <div className='personal-details'>
           <div className='personal-column'>
-            <div>
+            <div className='personal-detail-text'>
+              <EmailIcon />
               {personalDetails[Keys.EMAIL]}
             </div>
-            <div>
+            <div className='personal-detail-text'>
+              <PhoneIcon />
               {personalDetails[Keys.PHONE_NUMBER]}
             </div>
           </div>
           <div className='personal-column'>
-            <div>
+            <div className='personal-detail-text'>
+              <PlaceIcon />
               {personalDetails[Keys.LOCATION]}
             </div>
-            <div>
+            <div className='personal-detail-text'>
+              <HomeIcon />
               {personalDetails[Keys.WEBSITE]}
             </div>
           </div>
