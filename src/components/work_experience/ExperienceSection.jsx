@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import * as Keys from '../constants/Keys'
+import * as Keys from '../../constants/Keys'
 import ExperienceBlock from './ExperienceBlock'
 
 function ExperienceSection({ data = [], onChange = () => {} }) {

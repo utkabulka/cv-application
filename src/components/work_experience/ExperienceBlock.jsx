@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
-import * as Keys from '../constants/Keys'
-import InputField from './InputField'
-import TextArea from './TextArea'
+import * as Keys from '../../constants/Keys'
+import InputField from '../editor/InputField'
+import TextArea from '../editor/TextArea'
 
 function ExperienceBlock({ experience, onChange = () => {} }) {
   return (

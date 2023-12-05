@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
-import * as Keys from '../constants/Keys'
+import * as Keys from '../../constants/Keys'
+import Header from '../Header'
 import ExperienceBlock from './ExperienceBlock'
-import Header from './Header'
 
 function WorkExperience({
   workExperience = [],

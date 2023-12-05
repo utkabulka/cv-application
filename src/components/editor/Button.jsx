@@ -1,6 +1,6 @@
 import { SvgIcon } from '@mui/material'
 import PropTypes from 'prop-types'
-import '../styles/Button.css'
+import '../../styles/editor/Button.css'
 
 function Button({ icon = null, onClick = () => {} }) {
   return (

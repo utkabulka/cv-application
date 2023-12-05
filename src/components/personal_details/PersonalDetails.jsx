@@ -3,10 +3,10 @@ import HomeIcon from '@mui/icons-material/Home'
 import PhoneIcon from '@mui/icons-material/Phone'
 import RoomIcon from '@mui/icons-material/Room'
 import PropTypes from 'prop-types'
-import * as Keys from '../constants/Keys'
-import Header from './Header'
-import InputField from './InputField'
-import TextArea from './TextArea'
+import * as Keys from '../../constants/Keys'
+import Header from '../Header'
+import InputField from '../editor/InputField'
+import TextArea from '../editor/TextArea'
 
 function PersonalDetails({
   onInformationChanged: onDetailsChanged = () => {},

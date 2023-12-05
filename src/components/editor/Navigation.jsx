@@ -4,9 +4,9 @@ import SchoolIcon from '@mui/icons-material/School'
 import SettingsIcon from '@mui/icons-material/Settings'
 import WorkIcon from '@mui/icons-material/Work'
 import PropTypes from 'prop-types'
-import Button from '../components/Button'
-import * as NavigationTabs from '../constants/NavigationTabs'
-import '../styles/Navigation.css'
+import * as NavigationTabs from '../../constants/NavigationTabs'
+import '../../styles/editor/Navigation.css'
+import Button from './Button'
 
 function Navigation({ onNavigationClicked = () => {}, selectedTab = '' }) {
   return (

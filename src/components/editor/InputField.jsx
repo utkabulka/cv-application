@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import '../styles/InputField.css'
+import '../../styles/editor/InputField.css'
 
 function InputField({
   label = 'Input field label',

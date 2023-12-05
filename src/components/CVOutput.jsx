@@ -39,9 +39,12 @@ function CVOutput({ personalDetails = [], summary = '', workExperience = [] }) {
         <div className='section'>
           <h3>Summary</h3>
           <p>{summary}</p>
+          <hr />
         </div>
       )}
-      <div className='section'></div>
+      <div className='section'>
+        
+      </div>
     </div>
   )
 }
