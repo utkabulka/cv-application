@@ -4,7 +4,8 @@ function DateSelector({
   label = '',
   isRequired = false,
   value = '',
-  onDatePicked,
+  name = '',
+  onDatePicked = () => {},
 }) {
   return (
     <div className='input-block'>
@@ -12,7 +13,7 @@ function DateSelector({
         {label}
         {isRequired ? <span className='required'>required</span> : ''}
       </div>
-      <input value={value} onChange={onDatePicked} type='date' />
+      <input type='date' value={value} name={name} onChange={onDatePicked} />
     </div>
   )
 }
@@ -21,6 +22,7 @@ DateSelector.propTypes = {
   label: PropTypes.string,
   isRequired: PropTypes.bool,
   value: PropTypes.string,
+  name: PropTypes.string,
   onDatePicked: PropTypes.func,
 }
 

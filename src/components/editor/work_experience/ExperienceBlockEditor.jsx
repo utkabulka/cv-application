@@ -31,14 +31,16 @@ function ExperienceBlockEditor({ experience, onChange = () => {} }) {
           label='Started'
           isRequired={true}
           value={experience[Keys.WORK_START_DATE]}
-          onChange={(e) => {
+          name={Keys.WORK_START_DATE}
+          onDatePicked={(e) => {
             onChange(experience[Keys.ID], Keys.WORK_START_DATE, e.target.value)
           }}
         />
         <DateSelector
           label='Finished'
           value={experience[Keys.WORK_END_DATE]}
-          onChange={(e) => {
+          name={Keys.WORK_END_DATE}
+          onDatePicked={(e) => {
             onChange(experience[Keys.ID], Keys.WORK_END_DATE, e.target.value)
           }}
         />
