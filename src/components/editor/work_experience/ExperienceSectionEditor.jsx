@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types'
-import * as Keys from '../constants/Keys'
-import ExperienceBlock from './ExperienceBlock'
+import * as Keys from '../../../constants/Keys'
+import ExperienceBlockEditor from './ExperienceBlockEditor'
 
-function ExperienceSection({ data = [], onChange = () => {} }) {
+function ExperienceSectionEditor({ data = [], onChange = () => {} }) {
   return (
     <>
       {data.map((experience) => (
-        <ExperienceBlock
+        <ExperienceBlockEditor
           key={experience[Keys.ID]}
           experience={experience}
           onChange={onChange}
@@ -15,9 +15,9 @@ function ExperienceSection({ data = [], onChange = () => {} }) {
     </>
   )
 }
-ExperienceSection.propTypes = {
+ExperienceSectionEditor.propTypes = {
   data: PropTypes.array.isRequired,
   onChange: PropTypes.func.isRequired,
 }
 
-export default ExperienceSection
+export default ExperienceSectionEditor

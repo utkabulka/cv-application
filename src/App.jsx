@@ -1,21 +1,21 @@
 import { useState } from 'react'
 
-import EmailIcon from '@mui/icons-material/Email'
-import HomeIcon from '@mui/icons-material/Home'
-import PhoneIcon from '@mui/icons-material/Phone'
-import RoomIcon from '@mui/icons-material/Room'
-import ExperienceSection from './components/ExperienceSection'
 import Footer from './components/Footer'
-import Header from './components/Header'
-import InputField from './components/InputField'
-import TextArea from './components/TextArea'
-import * as Colors from './constants/Colors'
+import CVOutput from './components/cv_output/CVOutput'
+import Navigation from './components/editor/Navigation'
+import PersonalDetailsEditor from './components/editor/PersonalDetailsEditor'
+import WorkExperienceEditor from './components/editor/work_experience/WorkExperienceEditor'
 import DefaultData from './constants/DefaultData'
 import * as Keys from './constants/Keys'
+import * as NavigationButtons from './constants/NavigationButtons'
 import './styles/App.css'
 
 function App() {
-  const [personalInformation, setPersonalInformation] = useState(
+  const [selectedTab, setSelectedTab] = useState(
+    NavigationButtons.PERSONAL_INFORMATION
+  )
+
+  const [personalDetails, setPersonalInformation] = useState(
     DefaultData.initialPersonalInformation
   )
   const [summary, setSummary] = useState(DefaultData[Keys.SUMMARY])
@@ -23,9 +23,17 @@ function App() {
     DefaultData[Keys.WORK_EXPERIENCE]
   )
 
-  function handlePersonalInformationChange(e) {
+  function handleNavButtonClick(button) {
+    if (button == NavigationButtons.PRINT) {
+      console.log('Pressed print button')
+      return
+    }
+    setSelectedTab(button)
+  }
+
+  function handlePersonalDetailsChange(e) {
     setPersonalInformation({
-      ...personalInformation,
+      ...personalDetails,
       [e.target.name]: e.target.value,
     })
   }
@@ -50,83 +58,33 @@ function App() {
     <>
       <div className='app-root'>
         <div className='cv'>
-          <div className='personal'>
-            <div className='name-role-block'>
-              <InputField
-                label='Full name'
-                name={Keys.FULL_NAME}
-                fontSize={32}
-                color={Colors.WHITE}
-                value={personalInformation[Keys.FULL_NAME]}
-                onChange={handlePersonalInformationChange}
-              />
-              <InputField
-                label='Role'
-                name={Keys.ROLE}
-                fontSize={24}
-                color={Colors.WHITE}
-                value={personalInformation[Keys.ROLE]}
-                onChange={handlePersonalInformationChange}
-              />
-            </div>
-            <div className='other-personal-info'>
-              <div className='contacts-block'>
-                <InputField
-                  label='E-mail'
-                  name={Keys.EMAIL}
-                  color={Colors.WHITE}
-                  icon={EmailIcon}
-                  value={personalInformation[Keys.EMAIL]}
-                  onChange={handlePersonalInformationChange}
-                />
-                <InputField
-                  label='Phone number'
-                  name={Keys.PHONE_NUMBER}
-                  color={Colors.WHITE}
-                  icon={PhoneIcon}
-                  value={personalInformation[Keys.PHONE_NUMBER]}
-                  onChange={handlePersonalInformationChange}
-                />
-              </div>
-              <div className='website-location-block'>
-                <InputField
-                  label='Website'
-                  name={Keys.WEBSITE}
-                  color={Colors.WHITE}
-                  icon={HomeIcon}
-                  value={personalInformation[Keys.WEBSITE]}
-                  onChange={handlePersonalInformationChange}
-                />
-                <InputField
-                  label='Location'
-                  name={Keys.LOCATION}
-                  color={Colors.WHITE}
-                  icon={RoomIcon}
-                  value={personalInformation[Keys.LOCATION]}
-                  onChange={handlePersonalInformationChange}
-                />
-              </div>
-            </div>
-          </div>
-          <div className='section'>
-            <Header text='Summary' />
-            <TextArea
-              label='Your CV summary'
-              value={summary}
-              name={Keys.SUMMARY}
-              onChange={handleSummaryChange}
+          <div className='editor'>
+            <Navigation
+              onNavigationClicked={handleNavButtonClick}
+              selectedTab={selectedTab}
             />
-            <hr />
+            {selectedTab === NavigationButtons.PERSONAL_INFORMATION && (
+              <PersonalDetailsEditor
+                onInformationChanged={handlePersonalDetailsChange}
+                onSummaryChanged={handleSummaryChange}
+                personalInformation={personalDetails}
+                summary={summary}
+              />
+            )}
+            {selectedTab === NavigationButtons.WORK_EXPERIENCE && (
+              <WorkExperienceEditor
+                workExperience={workExperience}
+                onWorkExpreienceChanged={handleWorkExperienceChange}
+              />
+            )}
+            <Footer />
           </div>
-          <div className='section'>
-            <Header text='Experience' />
-            <ExperienceSection
-              data={workExperience}
-              onChange={handleWorkExperienceChange}
-            />
-          </div>
+          <CVOutput
+            personalDetails={personalDetails}
+            summary={summary}
+            workExperience={workExperience}
+          />
         </div>
-        <Footer />
       </div>
     </>
   )

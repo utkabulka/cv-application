@@ -1,0 +1,5 @@
+export const PERSONAL_INFORMATION = 'personalInformation'
+export const WORK_EXPERIENCE = 'workExperience'
+export const EDUCATION = 'education'
+export const SETTINGS = 'settings'
+export const PRINT = 'print'

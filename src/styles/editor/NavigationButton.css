@@ -1,0 +1,9 @@
+button {
+  flex: 1;
+  background-color: #ffffff00;
+  color: #080808;
+}
+
+.selected {
+  background-color: red;
+}

@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
-import * as Keys from '../constants/Keys'
-import InputField from './InputField'
-import TextArea from './TextArea'
+import * as Keys from '../../../constants/Keys'
+import InputField from '../InputField'
+import TextArea from '../TextArea'
 
-function ExperienceBlock({ experience, onChange = () => {} }) {
+function ExperienceBlockEditor({ experience, onChange = () => {} }) {
   return (
-    <div className='experience-block'>
+    <div className='editor-section'>
       <InputField
         label='Job title'
         value={experience[Keys.JOB_TITLE]}
@@ -29,7 +29,7 @@ function ExperienceBlock({ experience, onChange = () => {} }) {
         label='What did you do?'
         value={experience[Keys.WORK_SUMMARY]}
         name={Keys.WORK_SUMMARY}
-        height={40}
+        height={100}
         onChange={(e) => {
           onChange(experience[Keys.ID], Keys.WORK_SUMMARY, e.target.value)
         }}
@@ -37,9 +37,9 @@ function ExperienceBlock({ experience, onChange = () => {} }) {
     </div>
   )
 }
-ExperienceBlock.propTypes = {
+ExperienceBlockEditor.propTypes = {
   experience: PropTypes.object.isRequired,
   onChange: PropTypes.func.isRequired,
 }
 
-export default ExperienceBlock
+export default ExperienceBlockEditor

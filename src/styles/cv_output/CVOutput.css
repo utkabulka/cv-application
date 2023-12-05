@@ -1,0 +1,39 @@
+.cv-output {
+  display: flex;
+  flex-direction: column;
+  min-width: 21cm;
+  max-width: 21cm;
+  min-height: 29.7cm;
+  margin-left: 16px;
+  text-align: left;
+  box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000033;
+}
+
+.personal {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 32px 32px 32px;
+  background-color: #343434;
+  color: #f7f7f7;
+}
+.personal-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.personal-column {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 4px;
+}
+.personal-detail-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section {
+  padding: 0 48px 0 48px;
+  margin-top: 32px;
+}
