@@ -26,10 +26,22 @@ function ExperienceBlockEditor({ experience, onChange = () => {} }) {
           onChange(experience[Keys.ID], Keys.WORK_PLACE, e.target.value)
         }}
       />
-      {/* TODO: fix styling */}
       <div className='date-range'>
-        <DateSelector label='Started' isRequired={true} />
-        <DateSelector label='Finished' />
+        <DateSelector
+          label='Started'
+          isRequired={true}
+          value={experience[Keys.WORK_START_DATE]}
+          onChange={(e) => {
+            onChange(experience[Keys.ID], Keys.WORK_START_DATE, e.target.value)
+          }}
+        />
+        <DateSelector
+          label='Finished'
+          value={experience[Keys.WORK_END_DATE]}
+          onChange={(e) => {
+            onChange(experience[Keys.ID], Keys.WORK_END_DATE, e.target.value)
+          }}
+        />
       </div>
       <TextArea
         label='Summary'

@@ -14,6 +14,8 @@ const DefaultData = {
       [Keys.ID]: crypto.randomUUID(),
       [Keys.JOB_TITLE]: 'Programmer',
       [Keys.WORK_PLACE]: 'Google Inc.',
+      [Keys.WORK_START_DATE]: '2010-04-15',
+      [Keys.WORK_END_DATE]: '2012-05-01',
       [Keys.WORK_SUMMARY]:
         'This is a work experience summary for a programmer job at Google.',
     },
@@ -21,6 +23,8 @@ const DefaultData = {
       [Keys.ID]: crypto.randomUUID(),
       [Keys.JOB_TITLE]: 'Not a programmer',
       [Keys.WORK_PLACE]: 'Notgoogle Inc.',
+      [Keys.WORK_START_DATE]: '2016-07-15',
+      [Keys.WORK_END_DATE]: '',
       [Keys.WORK_SUMMARY]: `This is an another work experience summary, but for another job. Apparently it's not at Google.`,
     },
   ],
