@@ -7,12 +7,12 @@ import PersonalDetails from './components/personal_details/PersonalDetails'
 import WorkExperience from './components/work_experience/WorkExperience'
 import DefaultData from './constants/DefaultData'
 import * as Keys from './constants/Keys'
-import * as NavigationTabs from './constants/NavigationTabs'
+import * as NavigationButtons from './constants/NavigationButtons'
 import './styles/App.css'
 
 function App() {
   const [selectedTab, setSelectedTab] = useState(
-    NavigationTabs.PERSONAL_INFORMATION
+    NavigationButtons.PERSONAL_INFORMATION
   )
 
   const [personalDetails, setPersonalInformation] = useState(
@@ -23,9 +23,12 @@ function App() {
     DefaultData[Keys.WORK_EXPERIENCE]
   )
 
-  function handleSelectedTabChange(newTab) {
-    setSelectedTab(newTab)
-    console.log(`New tab: ${newTab}`)
+  function handleNavButtonClick(button) {
+    if (button == NavigationButtons.PRINT) {
+      console.log('Pressed print button')
+      return
+    }
+    setSelectedTab(button)
   }
 
   function handlePersonalDetailsChange(e) {
@@ -57,10 +60,10 @@ function App() {
         <div className='cv'>
           <div className='editor'>
             <Navigation
-              onNavigationClicked={handleSelectedTabChange}
+              onNavigationClicked={handleNavButtonClick}
               selectedTab={selectedTab}
             />
-            {selectedTab === NavigationTabs.PERSONAL_INFORMATION && (
+            {selectedTab === NavigationButtons.PERSONAL_INFORMATION && (
               <PersonalDetails
                 onInformationChanged={handlePersonalDetailsChange}
                 onSummaryChanged={handleSummaryChange}
@@ -68,7 +71,7 @@ function App() {
                 summary={summary}
               />
             )}
-            {selectedTab === NavigationTabs.WORK_EXPERIENCE && (
+            {selectedTab === NavigationButtons.WORK_EXPERIENCE && (
               <WorkExperience
                 workExperience={workExperience}
                 onWorkExpreienceChanged={handleWorkExperienceChange}

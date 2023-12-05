@@ -4,32 +4,38 @@ import SchoolIcon from '@mui/icons-material/School'
 import SettingsIcon from '@mui/icons-material/Settings'
 import WorkIcon from '@mui/icons-material/Work'
 import PropTypes from 'prop-types'
-import * as NavigationTabs from '../../constants/NavigationTabs'
+import * as NavigationButtons from '../../constants/NavigationButtons'
 import '../../styles/editor/Navigation.css'
-import Button from './Button'
+import NavigationButton from './NavigationButton'
 
 function Navigation({ onNavigationClicked = () => {}, selectedTab = '' }) {
   return (
     <div className='navigation'>
-      <Button
+      <NavigationButton
         icon={AccountCircleIcon}
-        onClick={() => onNavigationClicked(NavigationTabs.PERSONAL_INFORMATION)}
+        onClick={() =>
+          onNavigationClicked(NavigationButtons.PERSONAL_INFORMATION)
+        }
+        isSelected={selectedTab == NavigationButtons.PERSONAL_INFORMATION}
       />
-      <Button
+      <NavigationButton
         icon={WorkIcon}
-        onClick={() => onNavigationClicked(NavigationTabs.WORK_EXPERIENCE)}
+        onClick={() => onNavigationClicked(NavigationButtons.WORK_EXPERIENCE)}
+        isSelected={selectedTab == NavigationButtons.WORK_EXPERIENCE}
       />
-      <Button
+      <NavigationButton
         icon={SchoolIcon}
-        onClick={() => onNavigationClicked(NavigationTabs.WORK_EXPERIENCE)}
+        onClick={() => onNavigationClicked(NavigationButtons.EDUCATION)}
+        isSelected={selectedTab == NavigationButtons.EDUCATION}
       />
-      <Button
+      <NavigationButton
         icon={SettingsIcon}
-        onClick={() => onNavigationClicked(NavigationTabs.WORK_EXPERIENCE)}
+        onClick={() => onNavigationClicked(NavigationButtons.SETTINGS)}
+        isSelected={selectedTab == NavigationButtons.SETTINGS}
       />
-      <Button
+      <NavigationButton
         icon={PrintIcon}
-        onClick={() => onNavigationClicked(NavigationTabs.WORK_EXPERIENCE)}
+        onClick={() => onNavigationClicked(NavigationButtons.PRINT)}
       />
     </div>
   )
