@@ -24,6 +24,13 @@ textarea {
   font-size: 18px;
   font-weight: 400;
   color: #080808;
+  margin: 0;
+  padding: 8px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #0000008e;
 }
 
 a {

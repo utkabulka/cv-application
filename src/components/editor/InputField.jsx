@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types'
-import '../../styles/editor/InputField.css'
+import '../../styles/editor/Input.css'
 
 function InputField({
   label = 'Input field label',
   isRequired = false,
   placeholder = null,
-  name = '',
   value = '',
+  name = '',
   onChange = () => {},
 }) {
   return (

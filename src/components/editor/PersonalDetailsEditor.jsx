@@ -68,15 +68,13 @@ function PersonalDetailsEditor({
           icon={HomeIcon}
           value={personalInformation[Keys.WEBSITE]}
           onChange={onDetailsChanged}
-        />
-      </div>
-      <div className='editor-section'>
-        <Header text='Summary' />
+        />{' '}
         <TextArea
-          label='Your CV summary'
+          label='Summary'
+          placeholder='Your CV summary'
           value={summary}
           name={Keys.SUMMARY}
-          height={160}
+          height={180}
           onChange={onSummaryChanged}
         />
       </div>

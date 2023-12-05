@@ -1,18 +1,7 @@
-.icon-wrapper {
-  display: flex;
-  justify-content: left;
-  flex: 0 0 auto;
-  min-width: 40px;
-  padding-bottom: 8px;
-}
-
-input {
-  margin: 0;
-  padding: 8px;
-}
-
-input::placeholder {
-  color: #0000008e;
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+  resize: vertical;
 }
 
 .empty-required-input {
