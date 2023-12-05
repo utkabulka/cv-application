@@ -29,7 +29,7 @@ function ExperienceBlockEditor({ experience, onChange = () => {} }) {
         label='What did you do?'
         value={experience[Keys.WORK_SUMMARY]}
         name={Keys.WORK_SUMMARY}
-        height={40}
+        height={100}
         onChange={(e) => {
           onChange(experience[Keys.ID], Keys.WORK_SUMMARY, e.target.value)
         }}

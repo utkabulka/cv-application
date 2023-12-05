@@ -5,6 +5,7 @@ import PlaceIcon from '@mui/icons-material/Place'
 import PropTypes from 'prop-types'
 import * as Keys from '../../constants/Keys'
 import '../../styles/cv_output/CVOutput.css'
+import ExperienceBlock from './ExperienceBlock'
 
 function CVOutput({ personalDetails = [], summary = '', workExperience = [] }) {
   return (
@@ -37,14 +38,16 @@ function CVOutput({ personalDetails = [], summary = '', workExperience = [] }) {
       </div>
       {summary == '' ? null : (
         <div className='section'>
-          <h3>Summary</h3>
+          <h1>Summary</h1>
           <p>{summary}</p>
           <hr />
         </div>
       )}
       <div className='section'>
-        <h3>Work experience</h3>
-        
+        <h1>Work experience</h1>
+        {workExperience.map((experience) => (
+          <ExperienceBlock key={experience[Keys.ID]} experience={experience} />
+        ))}
       </div>
     </div>
   )
