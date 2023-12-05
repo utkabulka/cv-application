@@ -18,7 +18,7 @@ function TextArea({
   }
 
   return (
-    <div className='input-field'>
+    <div className='input-block'>
       <div>
         {label}
         {isRequired ? <span className='required'>required</span> : ''}
