@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
-import * as Keys from '../../constants/Keys'
-import Header from '../Header'
-import ExperienceBlock from './ExperienceBlock'
+import * as Keys from '../../../constants/Keys'
+import Header from '../../Header'
+import ExperienceBlockEditor from './ExperienceBlockEditor'
 
-function WorkExperience({
+function WorkExperienceEditor({
   workExperience = [],
   onWorkExpreienceChanged = () => {},
 }) {
@@ -13,7 +13,7 @@ function WorkExperience({
         <Header text='Work experience' />
       </div>
       {workExperience.map((experience) => (
-        <ExperienceBlock
+        <ExperienceBlockEditor
           key={experience[Keys.ID]}
           experience={experience}
           onChange={onWorkExpreienceChanged}
@@ -22,9 +22,9 @@ function WorkExperience({
     </>
   )
 }
-WorkExperience.propTypes = {
+WorkExperienceEditor.propTypes = {
   workExperience: PropTypes.array.isRequired,
   onWorkExpreienceChanged: PropTypes.func.isRequired,
 }
 
-export default WorkExperience
+export default WorkExperienceEditor

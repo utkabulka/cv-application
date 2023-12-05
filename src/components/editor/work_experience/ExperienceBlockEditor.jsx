@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
-import * as Keys from '../../constants/Keys'
-import InputField from '../editor/InputField'
-import TextArea from '../editor/TextArea'
+import * as Keys from '../../../constants/Keys'
+import InputField from '../InputField'
+import TextArea from '../TextArea'
 
-function ExperienceBlock({ experience, onChange = () => {} }) {
+function ExperienceBlockEditor({ experience, onChange = () => {} }) {
   return (
     <div className='editor-section'>
       <InputField
@@ -37,9 +37,9 @@ function ExperienceBlock({ experience, onChange = () => {} }) {
     </div>
   )
 }
-ExperienceBlock.propTypes = {
+ExperienceBlockEditor.propTypes = {
   experience: PropTypes.object.isRequired,
   onChange: PropTypes.func.isRequired,
 }
 
-export default ExperienceBlock
+export default ExperienceBlockEditor

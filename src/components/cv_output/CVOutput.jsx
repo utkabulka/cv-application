@@ -3,8 +3,8 @@ import HomeIcon from '@mui/icons-material/Home'
 import PhoneIcon from '@mui/icons-material/Phone'
 import PlaceIcon from '@mui/icons-material/Place'
 import PropTypes from 'prop-types'
-import * as Keys from '../constants/Keys'
-import '../styles/CVOutput.css'
+import * as Keys from '../../constants/Keys'
+import '../../styles/cv_output/CVOutput.css'
 
 function CVOutput({ personalDetails = [], summary = '', workExperience = [] }) {
   return (
@@ -43,6 +43,7 @@ function CVOutput({ personalDetails = [], summary = '', workExperience = [] }) {
         </div>
       )}
       <div className='section'>
+        <h3>Work experience</h3>
         
       </div>
     </div>

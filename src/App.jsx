@@ -1,10 +1,10 @@
 import { useState } from 'react'
 
-import CVOutput from './components/CVOutput'
 import Footer from './components/Footer'
+import CVOutput from './components/cv_output/CVOutput'
 import Navigation from './components/editor/Navigation'
-import PersonalDetails from './components/personal_details/PersonalDetails'
-import WorkExperience from './components/work_experience/WorkExperience'
+import PersonalDetailsEditor from './components/editor/PersonalDetailsEditor'
+import WorkExperienceEditor from './components/editor/work_experience/WorkExperienceEditor'
 import DefaultData from './constants/DefaultData'
 import * as Keys from './constants/Keys'
 import * as NavigationButtons from './constants/NavigationButtons'
@@ -64,7 +64,7 @@ function App() {
               selectedTab={selectedTab}
             />
             {selectedTab === NavigationButtons.PERSONAL_INFORMATION && (
-              <PersonalDetails
+              <PersonalDetailsEditor
                 onInformationChanged={handlePersonalDetailsChange}
                 onSummaryChanged={handleSummaryChange}
                 personalInformation={personalDetails}
@@ -72,7 +72,7 @@ function App() {
               />
             )}
             {selectedTab === NavigationButtons.WORK_EXPERIENCE && (
-              <WorkExperience
+              <WorkExperienceEditor
                 workExperience={workExperience}
                 onWorkExpreienceChanged={handleWorkExperienceChange}
               />

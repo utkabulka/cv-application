@@ -5,10 +5,10 @@ import RoomIcon from '@mui/icons-material/Room'
 import PropTypes from 'prop-types'
 import * as Keys from '../../constants/Keys'
 import Header from '../Header'
-import InputField from '../editor/InputField'
-import TextArea from '../editor/TextArea'
+import InputField from './InputField'
+import TextArea from './TextArea'
 
-function PersonalDetails({
+function PersonalDetailsEditor({
   onInformationChanged: onDetailsChanged = () => {},
   onSummaryChanged = () => {},
   personalInformation = [],
@@ -83,11 +83,11 @@ function PersonalDetails({
     </>
   )
 }
-PersonalDetails.propTypes = {
+PersonalDetailsEditor.propTypes = {
   onInformationChanged: PropTypes.func.isRequired,
   onSummaryChanged: PropTypes.func.isRequired,
   personalInformation: PropTypes.object.isRequired,
   summary: PropTypes.string.isRequired,
 }
 
-export default PersonalDetails
+export default PersonalDetailsEditor
