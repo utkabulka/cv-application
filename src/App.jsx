@@ -76,7 +76,11 @@ function App() {
             )}
             <Footer />
           </div>
-          <CVOutput />
+          <CVOutput
+            personalDetails={personalDetails}
+            summary={summary}
+            workExperience={workExperience}
+          />
         </div>
       </div>
     </>

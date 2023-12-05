@@ -34,36 +34,3 @@
   padding: 8px 20px 8px 20px;
   margin-bottom: 16px;
 }
-
-.cv-output {
-  min-width: 21cm;
-  min-height: 29.7cm;
-  margin-left: 16px;
-  box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000033;
-}
-
-.personal {
-  padding: 32px 32px 32px 32px;
-}
-.section {
-  padding: 0 48px 0 48px;
-  margin-top: 32px;
-}
-
-.personal {
-  background-color: #343434;
-}
-
-.other-personal-info {
-  display: flex;
-  flex-direction: row;
-  margin-top: 16px;
-}
-
-.name-role-block,
-.contacts-block,
-.website-location-block {
-  display: flex;
-  flex-direction: column;
-  flex: auto;
-}
