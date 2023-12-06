@@ -24,17 +24,15 @@ function PersonalDetailsEditor({
           label='Full name'
           placeholder={`What's your name?`}
           isRequired={true}
-          name={Keys.FULL_NAME}
           value={personalInformation[Keys.FULL_NAME]}
-          onChange={onDetailsChanged}
+          onChange={(e) => onDetailsChanged(Keys.FULL_NAME, e.target.value)}
         />
         <InputField
           label='Role'
           placeholder={`What is your desired role?`}
           isRequired={true}
-          name={Keys.ROLE}
           value={personalInformation[Keys.ROLE]}
-          onChange={onDetailsChanged}
+          onChange={(e) => onDetailsChanged(Keys.ROLE, e.target.value)}
         />
         <InputField
           label='Location'
@@ -43,7 +41,7 @@ function PersonalDetailsEditor({
           name={Keys.LOCATION}
           icon={RoomIcon}
           value={personalInformation[Keys.LOCATION]}
-          onChange={onDetailsChanged}
+          onChange={(e) => onDetailsChanged(Keys.LOCATION, e.target.value)}
         />
         <InputField
           label='E-mail'
@@ -51,7 +49,7 @@ function PersonalDetailsEditor({
           name={Keys.EMAIL}
           icon={EmailIcon}
           value={personalInformation[Keys.EMAIL]}
-          onChange={onDetailsChanged}
+          onChange={(e) => onDetailsChanged(Keys.EMAIL, e.target.value)}
         />
         <InputField
           label='Phone number'
@@ -59,7 +57,7 @@ function PersonalDetailsEditor({
           name={Keys.PHONE_NUMBER}
           icon={PhoneIcon}
           value={personalInformation[Keys.PHONE_NUMBER]}
-          onChange={onDetailsChanged}
+          onChange={(e) => onDetailsChanged(Keys.PHONE_NUMBER, e.target.value)}
         />
         <InputField
           label='Website'
@@ -67,7 +65,7 @@ function PersonalDetailsEditor({
           name={Keys.WEBSITE}
           icon={HomeIcon}
           value={personalInformation[Keys.WEBSITE]}
-          onChange={onDetailsChanged}
+          onChange={(e) => onDetailsChanged(Keys.WEBSITE, e.target.value)}
         />{' '}
         <TextArea
           label='Summary'

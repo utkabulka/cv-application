@@ -6,7 +6,6 @@ function InputField({
   isRequired = false,
   placeholder = null,
   value = '',
-  name = '',
   onChange = () => {},
 }) {
   return (
@@ -19,7 +18,6 @@ function InputField({
         className={isRequired && value == '' ? 'empty-required-input' : null}
         placeholder={placeholder == null ? label : placeholder}
         title={placeholder == null ? label : placeholder}
-        name={name}
         value={value}
         onChange={onChange}
       />
@@ -30,7 +28,6 @@ InputField.propTypes = {
   label: PropTypes.string.isRequired,
   isRequired: PropTypes.bool,
   placeholder: PropTypes.string,
-  name: PropTypes.string,
   value: PropTypes.string,
   icon: PropTypes.object,
   onChange: PropTypes.func.isRequired,

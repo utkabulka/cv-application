@@ -31,10 +31,10 @@ function App() {
     setSelectedTab(button)
   }
 
-  function handlePersonalDetailsChange(e) {
+  function handlePersonalDetailsChange(key, value) {
     setPersonalInformation({
       ...personalDetails,
-      [e.target.name]: e.target.value,
+      [key]: value,
     })
   }
 

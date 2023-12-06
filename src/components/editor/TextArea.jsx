@@ -6,7 +6,6 @@ function TextArea({
   isRequired = false,
   placeholder = null,
   value = '',
-  name = '',
   height = 80,
   onChange = () => {},
 }) {
@@ -27,7 +26,6 @@ function TextArea({
         className={isRequired && value == '' ? 'empty-required-input' : null}
         placeholder={placeholder == null ? label : placeholder}
         title={placeholder == null ? label : placeholder}
-        name={name}
         value={value}
         onChange={onChange}
         style={style}
@@ -40,7 +38,6 @@ TextArea.propTypes = {
   isRequired: PropTypes.bool,
   placeholder: PropTypes.string,
   value: PropTypes.string,
-  name: PropTypes.string,
   height: PropTypes.number,
   onChange: PropTypes.func.isRequired,
 }
