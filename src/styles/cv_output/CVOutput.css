@@ -27,6 +27,11 @@
   width: 50%;
   gap: 4px;
 }
+.personal-column a {
+  color: #F7F7F7;
+  font-weight: normal;
+}
+
 .personal-detail-text {
   display: flex;
   align-items: center;

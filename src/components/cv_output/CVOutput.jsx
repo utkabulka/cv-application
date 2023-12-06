@@ -29,10 +29,16 @@ function CVOutput({ personalDetails = [], summary = '', workExperience = [] }) {
               <PlaceIcon />
               {personalDetails[Keys.LOCATION]}
             </div>
-            <div className='personal-detail-text'>
-              <HomeIcon />
-              {personalDetails[Keys.WEBSITE]}
-            </div>
+            <a
+              href={personalDetails[Keys.WEBSITE]}
+              target='_blank'
+              rel='noreferrer'
+            >
+              <div className='personal-detail-text'>
+                <HomeIcon />
+                {personalDetails[Keys.WEBSITE]}
+              </div>
+            </a>
           </div>
         </div>
       </div>
