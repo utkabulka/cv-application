@@ -38,7 +38,6 @@ function PersonalDetailsEditor({
           label='Location'
           placeholder={`Where do you live?`}
           isRequired={true}
-          name={Keys.LOCATION}
           icon={RoomIcon}
           value={personalInformation[Keys.LOCATION]}
           onChange={(e) => onDetailsChanged(Keys.LOCATION, e.target.value)}
@@ -46,7 +45,6 @@ function PersonalDetailsEditor({
         <InputField
           label='E-mail'
           placeholder={`Your e-mail`}
-          name={Keys.EMAIL}
           icon={EmailIcon}
           value={personalInformation[Keys.EMAIL]}
           onChange={(e) => onDetailsChanged(Keys.EMAIL, e.target.value)}
@@ -54,7 +52,6 @@ function PersonalDetailsEditor({
         <InputField
           label='Phone number'
           placeholder={`Your phone number`}
-          name={Keys.PHONE_NUMBER}
           icon={PhoneIcon}
           value={personalInformation[Keys.PHONE_NUMBER]}
           onChange={(e) => onDetailsChanged(Keys.PHONE_NUMBER, e.target.value)}
@@ -62,7 +59,6 @@ function PersonalDetailsEditor({
         <InputField
           label='Website'
           placeholder={`Your website, if you have one`}
-          name={Keys.WEBSITE}
           icon={HomeIcon}
           value={personalInformation[Keys.WEBSITE]}
           onChange={(e) => onDetailsChanged(Keys.WEBSITE, e.target.value)}
@@ -71,7 +67,6 @@ function PersonalDetailsEditor({
           label='Summary'
           placeholder='Your CV summary'
           value={summary}
-          name={Keys.SUMMARY}
           height={180}
           onChange={onSummaryChanged}
         />
