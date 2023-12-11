@@ -77,38 +77,36 @@ function App() {
 
   return (
     <>
-      <div className='app-root'>
-        <div className='cv'>
-          <div className='editor'>
-            <Navigation
-              onNavigationClicked={handleNavButtonClick}
-              selectedTab={selectedTab}
-            />
-            {selectedTab === NavigationButtons.PERSONAL_INFORMATION && (
-              <PersonalDetailsEditor
-                onInformationChanged={handlePersonalDetailsChange}
-                onSummaryChanged={handleSummaryChange}
-                personalInformation={personalDetails}
-                summary={summary}
-              />
-            )}
-            {selectedTab === NavigationButtons.WORK_EXPERIENCE && (
-              <WorkExperienceEditor
-                workExperience={workExperience}
-                setWorkExperience={setWorkExperience}
-                onWorkExpreienceChanged={handleWorkExperienceChange}
-                onWorkExpreienceDeleted={handleWorkExperienceDeleted}
-                onWorkExpreienceAdded={handleWorkExperienceAdded}
-              />
-            )}
-            <Footer />
-          </div>
-          <CVOutput
-            personalDetails={personalDetails}
-            summary={summary}
-            workExperience={workExperience}
+      <div className='cv'>
+        <div className='editor'>
+          <Navigation
+            onNavigationClicked={handleNavButtonClick}
+            selectedTab={selectedTab}
           />
+          {selectedTab === NavigationButtons.PERSONAL_INFORMATION && (
+            <PersonalDetailsEditor
+              onInformationChanged={handlePersonalDetailsChange}
+              onSummaryChanged={handleSummaryChange}
+              personalInformation={personalDetails}
+              summary={summary}
+            />
+          )}
+          {selectedTab === NavigationButtons.WORK_EXPERIENCE && (
+            <WorkExperienceEditor
+              workExperience={workExperience}
+              setWorkExperience={setWorkExperience}
+              onWorkExpreienceChanged={handleWorkExperienceChange}
+              onWorkExpreienceDeleted={handleWorkExperienceDeleted}
+              onWorkExpreienceAdded={handleWorkExperienceAdded}
+            />
+          )}
+          <Footer />
         </div>
+        <CVOutput
+          personalDetails={personalDetails}
+          summary={summary}
+          workExperience={workExperience}
+        />
       </div>
     </>
   )
