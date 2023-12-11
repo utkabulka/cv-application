@@ -35,9 +35,22 @@
   margin-bottom: 16px;
 }
 
-.editor-section-buttons {
+.editor-section-controls {
   display: flex;
   justify-content: right;
+  align-items: center;
+}
+
+.handle {
+  flex: 1 0 auto;
+}
+
+.handle:hover {
+  cursor: grab;
+}
+
+.editor-section-delete {
+  flex: 0 0 auto;
 }
 
 .add-element-button {

@@ -1,3 +1,5 @@
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
+import DragHandleIcon from '@mui/icons-material/DragHandle'
 import PropTypes from 'prop-types'
 import * as Keys from '../../../constants/Keys'
 import DateSelector from '../DateSelector'
@@ -8,31 +10,19 @@ function ExperienceBlockEditor({
   experience,
   onChange = () => {},
   onDeleted = () => {},
-  onReordered = () => {},
 }) {
   return (
     <div className='editor-section'>
-      <div className='editor-section-buttons'>
-        <button
+      <div className='editor-section-controls'>
+        <div className='handle'>
+          <DragHandleIcon />
+        </div>
+        <button className='editor-section-delete'
           onClick={() => {
             onDeleted(experience[Keys.ID])
           }}
         >
-          Delete
-        </button>
-        <button
-          onClick={() => {
-            onReordered(experience[Keys.ID], true)
-          }}
-        >
-          Move up
-        </button>{' '}
-        <button
-          onClick={() => {
-            onReordered(experience[Keys.ID], false)
-          }}
-        >
-          Move down
+          <DeleteForeverIcon />
         </button>
       </div>
       <InputField
@@ -91,7 +81,6 @@ ExperienceBlockEditor.propTypes = {
   experience: PropTypes.object.isRequired,
   onChange: PropTypes.func.isRequired,
   onDeleted: PropTypes.func.isRequired,
-  onReordered: PropTypes.func.isRequired,
 }
 
 export default ExperienceBlockEditor

@@ -75,44 +75,6 @@ function App() {
     )
   }
 
-  function handleWorkExperienceReordered(workExperienceId, shiftUp = true) {
-    if (workExperience.length <= 1) {
-      return
-    }
-
-    // searching for item that needs to be reordered
-    let workExperienceIndex = -1
-    for (let index = 0; index < workExperience.length; index++) {
-      if (workExperience[index][Keys.ID] == workExperienceId) {
-        workExperienceIndex = index
-      }
-    }
-    if (workExperienceIndex == 0 && shiftUp) {
-      // element already at the top of the array
-      return
-    }
-    if (workExperienceIndex == workExperience.length - 1 && !shiftUp) {
-      // element already at the bottom of the array
-      return
-    }
-
-    let reorderedWorkExperience = [...workExperience]
-
-    let indexToSwitchTo = shiftUp
-      ? workExperienceIndex - 1
-      : workExperienceIndex + 1
-
-    let targetElement = { ...workExperience[workExperienceIndex] }
-    let movedElement = { ...workExperience[indexToSwitchTo] }
-
-    reorderedWorkExperience[indexToSwitchTo] = targetElement
-    reorderedWorkExperience[workExperienceIndex] = movedElement
-
-    setWorkExperience(reorderedWorkExperience)
-  }
-
-  // console.log(workExperience)
-
   return (
     <>
       <div className='app-root'>
@@ -133,10 +95,10 @@ function App() {
             {selectedTab === NavigationButtons.WORK_EXPERIENCE && (
               <WorkExperienceEditor
                 workExperience={workExperience}
+                setWorkExperience={setWorkExperience}
                 onWorkExpreienceChanged={handleWorkExperienceChange}
                 onWorkExpreienceDeleted={handleWorkExperienceDeleted}
                 onWorkExpreienceAdded={handleWorkExperienceAdded}
-                onWorkExpreienceReordered={handleWorkExperienceReordered}
               />
             )}
             <Footer />
