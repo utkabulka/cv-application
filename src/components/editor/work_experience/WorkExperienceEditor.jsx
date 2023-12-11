@@ -8,6 +8,7 @@ function WorkExperienceEditor({
   workExperience = [],
   onWorkExpreienceChanged = () => {},
   onWorkExpreienceDeleted = () => {},
+  onWorkExpreienceAdded = () => {},
 }) {
   return (
     <>
@@ -23,7 +24,7 @@ function WorkExperienceEditor({
         />
       ))}
       <div className='editor-section add-element-button'>
-        <button>
+        <button onClick={onWorkExpreienceAdded}>
           <AddCircleIcon />
         </button>
       </div>
@@ -34,6 +35,7 @@ WorkExperienceEditor.propTypes = {
   workExperience: PropTypes.array.isRequired,
   onWorkExpreienceChanged: PropTypes.func.isRequired,
   onWorkExpreienceDeleted: PropTypes.func.isRequired,
+  onWorkExpreienceAdded: PropTypes.func.isRequired,
 }
 
 export default WorkExperienceEditor

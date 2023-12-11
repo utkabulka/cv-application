@@ -5,6 +5,7 @@ import CVOutput from './components/cv_output/CVOutput'
 import Navigation from './components/editor/Navigation'
 import PersonalDetailsEditor from './components/editor/PersonalDetailsEditor'
 import WorkExperienceEditor from './components/editor/work_experience/WorkExperienceEditor'
+import DefaultData from './constants/DefaultData'
 import * as Keys from './constants/Keys'
 import * as NavigationButtons from './constants/NavigationButtons'
 import SampleData from './constants/SampleData'
@@ -65,8 +66,16 @@ function App() {
   }
 
   function handleWorkExperienceAdded() {
-    // setWorkExperience()
+    let newWorkExperience = { ...DefaultData[Keys.WORK_EXPERIENCE] }
+    newWorkExperience[Keys.ID] = crypto.randomUUID()
+
+    setWorkExperience((workExperience) => [
+      ...workExperience,
+      newWorkExperience,
+    ])
   }
+
+  console.log(workExperience)
 
   return (
     <>
@@ -90,6 +99,7 @@ function App() {
                 workExperience={workExperience}
                 onWorkExpreienceChanged={handleWorkExperienceChange}
                 onWorkExpreienceDeleted={handleWorkExperienceDeleted}
+                onWorkExpreienceAdded={handleWorkExperienceAdded}
               />
             )}
             <Footer />
