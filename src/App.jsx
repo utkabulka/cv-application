@@ -54,6 +54,16 @@ function App() {
     )
   }
 
+  function handleWorkExperienceDeleted(workExperienceId) {
+    setWorkExperience(
+      workExperience.filter((experience) => {
+        if (experience[Keys.ID] != workExperienceId) {
+          return experience
+        }
+      })
+    )
+  }
+
   return (
     <>
       <div className='app-root'>
@@ -75,6 +85,7 @@ function App() {
               <WorkExperienceEditor
                 workExperience={workExperience}
                 onWorkExpreienceChanged={handleWorkExperienceChange}
+                onWorkExpreienceDeleted={handleWorkExperienceDeleted}
               />
             )}
             <Footer />

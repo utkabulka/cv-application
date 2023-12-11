@@ -35,6 +35,17 @@
   margin-bottom: 16px;
 }
 
+.editor-section-buttons {
+  display: flex;
+  justify-content: right;
+}
+
+.add-element-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .date-range {
   display: flex;
   flex-direction: row;

@@ -4,9 +4,22 @@ import DateSelector from '../DateSelector'
 import InputField from '../InputField'
 import TextArea from '../TextArea'
 
-function ExperienceBlockEditor({ experience, onChange = () => {} }) {
+function ExperienceBlockEditor({
+  experience,
+  onChange = () => {},
+  onDeleted = () => {},
+}) {
   return (
     <div className='editor-section'>
+      <div className='editor-section-buttons'>
+        <button
+          onClick={() => {
+            onDeleted(experience[Keys.ID])
+          }}
+        >
+          DEL
+        </button>
+      </div>
       <InputField
         label='Job title'
         isRequired={true}
@@ -62,6 +75,7 @@ function ExperienceBlockEditor({ experience, onChange = () => {} }) {
 ExperienceBlockEditor.propTypes = {
   experience: PropTypes.object.isRequired,
   onChange: PropTypes.func.isRequired,
+  onDeleted: PropTypes.func.isRequired,
 }
 
 export default ExperienceBlockEditor
