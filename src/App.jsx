@@ -4,6 +4,8 @@ import Footer from './components/Footer'
 import CVOutput from './components/cv_output/CVOutput'
 import Navigation from './components/editor/Navigation'
 import PersonalDetailsEditor from './components/editor/PersonalDetailsEditor'
+import Settings from './components/editor/Settings'
+import EducationEditor from './components/editor/education/EducationEditor'
 import WorkExperienceEditor from './components/editor/work_experience/WorkExperienceEditor'
 import DefaultData from './constants/DefaultData'
 import * as Keys from './constants/Keys'
@@ -100,6 +102,8 @@ function App() {
               onWorkExpreienceAdded={handleWorkExperienceAdded}
             />
           )}
+          {selectedTab === NavigationButtons.EDUCATION && <EducationEditor />}
+          {selectedTab === NavigationButtons.SETTINGS && <Settings />}
           <Footer />
         </div>
         <CVOutput

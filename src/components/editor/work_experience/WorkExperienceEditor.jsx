@@ -1,8 +1,8 @@
-import AddCircleIcon from '@mui/icons-material/AddCircle'
 import PropTypes from 'prop-types'
 import { ReactSortable } from 'react-sortablejs'
 import * as Keys from '../../../constants/Keys'
 import Header from '../../Header'
+import AddButton from '../AddButton'
 import ExperienceBlockEditor from './ExperienceBlockEditor'
 
 function WorkExperienceEditor({
@@ -27,11 +27,7 @@ function WorkExperienceEditor({
           />
         ))}
       </ReactSortable>
-      <div className='editor-section add-element-button'>
-        <button onClick={onWorkExpreienceAdded}>
-          <AddCircleIcon />
-        </button>
-      </div>
+      <AddButton onClick={onWorkExpreienceAdded} />
     </>
   )
 }
