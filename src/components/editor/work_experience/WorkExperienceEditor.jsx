@@ -9,6 +9,7 @@ function WorkExperienceEditor({
   onWorkExpreienceChanged = () => {},
   onWorkExpreienceDeleted = () => {},
   onWorkExpreienceAdded = () => {},
+  onWorkExpreienceReordered = () => {},
 }) {
   return (
     <>
@@ -21,6 +22,7 @@ function WorkExperienceEditor({
           experience={experience}
           onChange={onWorkExpreienceChanged}
           onDeleted={onWorkExpreienceDeleted}
+          onReordered={onWorkExpreienceReordered}
         />
       ))}
       <div className='editor-section add-element-button'>
@@ -36,6 +38,7 @@ WorkExperienceEditor.propTypes = {
   onWorkExpreienceChanged: PropTypes.func.isRequired,
   onWorkExpreienceDeleted: PropTypes.func.isRequired,
   onWorkExpreienceAdded: PropTypes.func.isRequired,
+  onWorkExpreienceReordered: PropTypes.func.isRequired,
 }
 
 export default WorkExperienceEditor

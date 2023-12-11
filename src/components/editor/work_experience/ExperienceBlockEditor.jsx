@@ -8,6 +8,7 @@ function ExperienceBlockEditor({
   experience,
   onChange = () => {},
   onDeleted = () => {},
+  onReordered = () => {},
 }) {
   return (
     <div className='editor-section'>
@@ -17,7 +18,21 @@ function ExperienceBlockEditor({
             onDeleted(experience[Keys.ID])
           }}
         >
-          DEL
+          Delete
+        </button>
+        <button
+          onClick={() => {
+            onReordered(experience[Keys.ID], true)
+          }}
+        >
+          Move up
+        </button>{' '}
+        <button
+          onClick={() => {
+            onReordered(experience[Keys.ID], false)
+          }}
+        >
+          Move down
         </button>
       </div>
       <InputField
@@ -76,6 +91,7 @@ ExperienceBlockEditor.propTypes = {
   experience: PropTypes.object.isRequired,
   onChange: PropTypes.func.isRequired,
   onDeleted: PropTypes.func.isRequired,
+  onReordered: PropTypes.func.isRequired,
 }
 
 export default ExperienceBlockEditor
