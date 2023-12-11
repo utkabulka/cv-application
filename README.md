@@ -1,8 +1,17 @@
-# React + Vite
+# CV Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is created as part of [the Odin Project](https://www.theodinproject.com/) curriculum.
 
-Currently, two official plugins are available:
+You can check out the [deployment of this project](https://utkabulka.github.io/cv-application/) on GitHub Pages.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+# How to run locally
+
+Clone the repository, change current directory to `cv-application` and then run:
+
+```
+$ npm install
+$ npm run dev
+```
+
+You can access the project by opening `http://localhost:5173/cv-application/` in your browser.
