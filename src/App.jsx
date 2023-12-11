@@ -5,9 +5,9 @@ import CVOutput from './components/cv_output/CVOutput'
 import Navigation from './components/editor/Navigation'
 import PersonalDetailsEditor from './components/editor/PersonalDetailsEditor'
 import WorkExperienceEditor from './components/editor/work_experience/WorkExperienceEditor'
-import DefaultData from './constants/DefaultData'
 import * as Keys from './constants/Keys'
 import * as NavigationButtons from './constants/NavigationButtons'
+import SampleData from './constants/SampleData'
 import './styles/App.css'
 
 function App() {
@@ -16,11 +16,11 @@ function App() {
   )
 
   const [personalDetails, setPersonalInformation] = useState(
-    DefaultData.initialPersonalInformation
+    SampleData.initialPersonalInformation
   )
-  const [summary, setSummary] = useState(DefaultData[Keys.SUMMARY])
+  const [summary, setSummary] = useState(SampleData[Keys.SUMMARY])
   const [workExperience, setWorkExperience] = useState(
-    DefaultData[Keys.WORK_EXPERIENCE]
+    SampleData[Keys.WORK_EXPERIENCE]
   )
 
   function handleNavButtonClick(button) {
@@ -62,6 +62,10 @@ function App() {
         }
       })
     )
+  }
+
+  function handleWorkExperienceAdded() {
+    // setWorkExperience()
   }
 
   return (

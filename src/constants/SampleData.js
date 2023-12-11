@@ -1,6 +1,6 @@
 import * as Keys from './Keys'
 
-const DefaultData = {
+const SampleData = {
   initialPersonalInformation: {
     [Keys.FULL_NAME]: 'Alice Bobinson',
     [Keys.ROLE]: 'Full-stack developer',
@@ -31,4 +31,4 @@ const DefaultData = {
   [Keys.SUMMARY]: `Alice Bobinson, the Full-stack developer. This is a summary. I have no idea what to write in here. So I'll just write something. This is something. I am writing some things and these things don't make any sense.`,
 }
 
-export default DefaultData
+export default SampleData
