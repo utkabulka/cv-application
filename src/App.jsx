@@ -135,6 +135,7 @@ function App() {
           personalDetails={personalDetails}
           summary={summary}
           workExperience={workExperience}
+          education={education}
         />
       </div>
     </>

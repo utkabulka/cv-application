@@ -4,10 +4,16 @@ import PhoneIcon from '@mui/icons-material/Phone'
 import PlaceIcon from '@mui/icons-material/Place'
 import PropTypes from 'prop-types'
 import * as Keys from '../../constants/Keys'
-import '../../styles/cv_output/CVOutput.css'
-import ExperienceBlock from './ExperienceBlock'
+import '../../styles/CVOutput.css'
+import EducationBlock from './EducationBlock'
+import WorkExperienceBlock from './WorkExperienceBlock'
 
-function CVOutput({ personalDetails = [], summary = '', workExperience = [] }) {
+function CVOutput({
+  personalDetails = [],
+  summary = '',
+  workExperience = [],
+  education = [],
+}) {
   return (
     <div className='cv-output'>
       <div className='personal'>
@@ -49,12 +55,29 @@ function CVOutput({ personalDetails = [], summary = '', workExperience = [] }) {
           <hr />
         </div>
       )}
-      <div className='section'>
-        <h1>Work experience</h1>
-        {workExperience.map((experience) => (
-          <ExperienceBlock key={experience[Keys.ID]} experience={experience} />
-        ))}
-      </div>
+      {workExperience.length == 0 ? null : (
+        <div className='section'>
+          <h1>Work experience</h1>
+          {workExperience.map((workExperienceEntry) => (
+            <WorkExperienceBlock
+              key={workExperienceEntry[Keys.ID]}
+              workExperienceEntry={workExperienceEntry}
+            />
+          ))}
+          <hr />
+        </div>
+      )}
+      {education.length == 0 ? null : (
+        <div className='section'>
+          <h1>Education</h1>
+          {education.map((educationEntry) => (
+            <EducationBlock
+              key={educationEntry[Keys.ID]}
+              educationEntry={educationEntry}
+            />
+          ))}
+        </div>
+      )}
     </div>
   )
 }
@@ -62,6 +85,7 @@ CVOutput.propTypes = {
   personalDetails: PropTypes.object,
   summary: PropTypes.string,
   workExperience: PropTypes.array,
+  education: PropTypes.array,
 }
 
 export default CVOutput
