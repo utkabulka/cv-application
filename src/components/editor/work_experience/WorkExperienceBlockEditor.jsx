@@ -1,8 +1,7 @@
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
-import DragHandleIcon from '@mui/icons-material/DragHandle'
 import PropTypes from 'prop-types'
 import * as Keys from '../../../constants/Keys'
 import DateSelector from '../DateSelector'
+import EditorSectionControls from '../EditorSectionControls'
 import InputField from '../InputField'
 import TextArea from '../TextArea'
 
@@ -13,18 +12,7 @@ function WorkExperienceBlockEditor({
 }) {
   return (
     <div className='editor-section'>
-      <div className='editor-section-controls'>
-        <div className='handle'>
-          <DragHandleIcon />
-        </div>
-        <button className='editor-section-delete'
-          onClick={() => {
-            onDeleted(experience[Keys.ID])
-          }}
-        >
-          <DeleteForeverIcon />
-        </button>
-      </div>
+      <EditorSectionControls targetObject={experience} onDeleted={onDeleted} />
       <InputField
         label='Job title'
         isRequired={true}
