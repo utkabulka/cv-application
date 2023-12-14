@@ -68,7 +68,6 @@ function EducationBlockEditor({
       <TextArea
         label='Summary'
         placeholder='What did you learn?'
-        isRequired={true}
         value={educationEntry[Keys.SUMMARY]}
         name={Keys.SUMMARY}
         height={100}

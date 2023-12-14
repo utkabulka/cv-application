@@ -81,7 +81,6 @@ function App() {
 
   // education functions
   function handleEducationChange(educationId, fieldName, value) {
-    console.log(`${educationId}: ${fieldName} change to ${value}`)
     setEducation(
       education.map((educationEntry) => {
         if (educationEntry[Keys.ID] === educationId) {
