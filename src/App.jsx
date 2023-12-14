@@ -46,37 +46,53 @@ function App() {
     setSummary(e.target.value)
   }
 
+  // work experience functions
   function handleWorkExperienceChange(workExperienceId, fieldName, value) {
     setWorkExperience(
-      workExperience.map((experience) => {
-        if (experience.id === workExperienceId) {
-          return { ...experience, [fieldName]: value }
+      workExperience.map((workExperienceEntry) => {
+        if (workExperienceEntry[Keys.ID] === workExperienceId) {
+          return { ...workExperienceEntry, [fieldName]: value }
         } else {
-          return experience
+          return workExperienceEntry
         }
       })
     )
   }
 
   function handleWorkExperienceAdded() {
-    let newWorkExperience = { ...DefaultData[Keys.WORK_EXPERIENCE] }
-    newWorkExperience[Keys.ID] = crypto.randomUUID()
+    let newWorkExperienceEntry = { ...DefaultData[Keys.WORK_EXPERIENCE] }
+    newWorkExperienceEntry[Keys.ID] = crypto.randomUUID()
 
     setWorkExperience((workExperience) => [
       ...workExperience,
-      newWorkExperience,
+      newWorkExperienceEntry,
     ])
   }
 
   function handleWorkExperienceDeleted(workExperienceId) {
     setWorkExperience(
-      workExperience.filter((experience) => {
-        if (experience[Keys.ID] != workExperienceId) {
-          return experience
+      workExperience.filter((workExperienceEntry) => {
+        if (workExperienceEntry[Keys.ID] != workExperienceId) {
+          return workExperienceEntry
         }
       })
     )
   }
+
+  // education functions
+  function handleEducationChange(educationId, fieldName, value) {
+    setEducation((educationEntry) => {
+      if (educationEntry[Keys.ID] === educationId) {
+        return { ...education, [fieldName]: value }
+      } else {
+        return educationEntry
+      }
+    })
+  }
+
+  function handleEducationAdded() {}
+
+  function handleEducationDeleted(educationId) {}
 
   return (
     <>
@@ -103,7 +119,15 @@ function App() {
               onWorkExpreienceAdded={handleWorkExperienceAdded}
             />
           )}
-          {selectedTab === NavigationButtons.EDUCATION && <EducationEditor />}
+          {selectedTab === NavigationButtons.EDUCATION && (
+            <EducationEditor
+              education={education}
+              setEducation={setEducation}
+              onEducationChanged={handleEducationChange}
+              onEducationDeleted={handleEducationDeleted}
+              onEducationAdded={handleEducationAdded}
+            />
+          )}
           {selectedTab === NavigationButtons.SETTINGS && <Settings />}
           <Footer />
         </div>

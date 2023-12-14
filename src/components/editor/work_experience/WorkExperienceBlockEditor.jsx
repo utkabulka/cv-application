@@ -6,7 +6,7 @@ import DateSelector from '../DateSelector'
 import InputField from '../InputField'
 import TextArea from '../TextArea'
 
-function ExperienceBlockEditor({
+function WorkExperienceBlockEditor({
   experience,
   onChange = () => {},
   onDeleted = () => {},
@@ -77,10 +77,10 @@ function ExperienceBlockEditor({
     </div>
   )
 }
-ExperienceBlockEditor.propTypes = {
+WorkExperienceBlockEditor.propTypes = {
   experience: PropTypes.object.isRequired,
   onChange: PropTypes.func.isRequired,
   onDeleted: PropTypes.func.isRequired,
 }
 
-export default ExperienceBlockEditor
+export default WorkExperienceBlockEditor

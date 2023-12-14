@@ -3,7 +3,7 @@ import { ReactSortable } from 'react-sortablejs'
 import * as Keys from '../../../constants/Keys'
 import Header from '../../Header'
 import AddButton from '../AddButton'
-import ExperienceBlockEditor from './ExperienceBlockEditor'
+import WorkExperienceBlockEditor from './WorkExperienceBlockEditor'
 
 function WorkExperienceEditor({
   workExperience = [],
@@ -19,7 +19,7 @@ function WorkExperienceEditor({
       </div>
       <ReactSortable list={workExperience} setList={setWorkExperience} handle='.handle'>
         {workExperience.map((experience) => (
-          <ExperienceBlockEditor
+          <WorkExperienceBlockEditor
             key={experience[Keys.ID]}
             experience={experience}
             onChange={onWorkExpreienceChanged}
