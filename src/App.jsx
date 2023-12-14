@@ -81,18 +81,34 @@ function App() {
 
   // education functions
   function handleEducationChange(educationId, fieldName, value) {
-    setEducation((educationEntry) => {
-      if (educationEntry[Keys.ID] === educationId) {
-        return { ...education, [fieldName]: value }
-      } else {
-        return educationEntry
-      }
-    })
+    console.log(`${educationId}: ${fieldName} change to ${value}`)
+    setEducation(
+      education.map((educationEntry) => {
+        if (educationEntry[Keys.ID] === educationId) {
+          return { ...educationEntry, [fieldName]: value }
+        } else {
+          return educationEntry
+        }
+      })
+    )
   }
 
-  function handleEducationAdded() {}
+  function handleEducationAdded() {
+    let newEducationEntry = { ...DefaultData[Keys.EDUCATION] }
+    newEducationEntry[Keys.ID] = crypto.randomUUID()
 
-  function handleEducationDeleted(educationId) {}
+    setEducation((education) => [...education, newEducationEntry])
+  }
+
+  function handleEducationDeleted(educationId) {
+    setEducation(
+      education.filter((educationEntry) => {
+        if (educationEntry[Keys.ID] != educationId) {
+          return educationEntry
+        }
+      })
+    )
+  }
 
   return (
     <>

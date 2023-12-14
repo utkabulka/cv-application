@@ -25,7 +25,7 @@ function WorkExperienceEditor({
         {workExperience.map((workExperienceEntry) => (
           <WorkExperienceBlockEditor
             key={workExperienceEntry[Keys.ID]}
-            experience={workExperienceEntry}
+            workExperienceEntry={workExperienceEntry}
             onChange={onWorkExpreienceChanged}
             onDeleted={onWorkExpreienceDeleted}
           />

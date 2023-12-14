@@ -21,6 +21,7 @@ function EducationEditor({
         {education.map((educationEntry) => (
           <EducationBlockEditor
             key={educationEntry[Keys.ID]}
+            educationEntry={educationEntry}
             onChange={onEducationChanged}
             onDeleted={onEducationDeleted}
           />
