@@ -17,11 +17,15 @@ function WorkExperienceEditor({
       <div className='editor-section'>
         <Header text='Work experience' />
       </div>
-      <ReactSortable list={workExperience} setList={setWorkExperience} handle='.handle'>
-        {workExperience.map((experience) => (
+      <ReactSortable
+        list={workExperience}
+        setList={setWorkExperience}
+        handle='.handle'
+      >
+        {workExperience.map((workExperienceEntry) => (
           <WorkExperienceBlockEditor
-            key={experience[Keys.ID]}
-            experience={experience}
+            key={workExperienceEntry[Keys.ID]}
+            experience={workExperienceEntry}
             onChange={onWorkExpreienceChanged}
             onDeleted={onWorkExpreienceDeleted}
           />
