@@ -9,9 +9,9 @@ import WorkExperienceBlockEditor from './WorkExperienceBlockEditor'
 function WorkExperienceEditor({
   workExperience = [],
   setWorkExperience = () => {},
-  onWorkExpreienceChanged = () => {},
-  onWorkExpreienceDeleted = () => {},
-  onWorkExpreienceAdded = () => {},
+  onWorkExperienceChanged = () => {},
+  onWorkExperienceDeleted = () => {},
+  onWorkExperienceAdded = () => {},
 }) {
   return (
     <>
@@ -27,21 +27,21 @@ function WorkExperienceEditor({
           <WorkExperienceBlockEditor
             key={workExperienceEntry[Keys.ID]}
             workExperienceEntry={workExperienceEntry}
-            onChange={onWorkExpreienceChanged}
-            onDeleted={onWorkExpreienceDeleted}
+            onChange={onWorkExperienceChanged}
+            onDeleted={onWorkExperienceDeleted}
           />
         ))}
       </ReactSortable>
-      <AddButton onClick={onWorkExpreienceAdded} />
+      <AddButton onClick={onWorkExperienceAdded} />
     </>
   )
 }
 WorkExperienceEditor.propTypes = {
   workExperience: PropTypes.array.isRequired,
   setWorkExperience: PropTypes.func.isRequired,
-  onWorkExpreienceChanged: PropTypes.func.isRequired,
-  onWorkExpreienceDeleted: PropTypes.func.isRequired,
-  onWorkExpreienceAdded: PropTypes.func.isRequired,
+  onWorkExperienceChanged: PropTypes.func.isRequired,
+  onWorkExperienceDeleted: PropTypes.func.isRequired,
+  onWorkExperienceAdded: PropTypes.func.isRequired,
 }
 
 export default WorkExperienceEditor
