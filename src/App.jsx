@@ -27,100 +27,29 @@ function App() {
   )
   const [education, setEducation] = useState(SampleData[Keys.EDUCATION])
 
-  function handleNavButtonClick(button) {
-    if (button == NavigationButtons.PRINT) {
-      console.log('Pressed print button')
-      return
-    }
-    setSelectedTab(button)
-  }
-
-  function handlePersonalDetailsChange(key, value) {
-    setPersonalInformation({
-      ...personalDetails,
-      [key]: value,
-    })
-  }
-
-  function handleSummaryChange(e) {
-    setSummary(e.target.value)
-  }
-
-  // work experience functions
-  function handleWorkExperienceChange(workExperienceId, fieldName, value) {
-    setWorkExperience(
-      workExperience.map((workExperienceEntry) => {
-        if (workExperienceEntry[Keys.ID] === workExperienceId) {
-          return { ...workExperienceEntry, [fieldName]: value }
-        } else {
-          return workExperienceEntry
-        }
-      })
-    )
-  }
-
-  function handleWorkExperienceAdded() {
-    let newWorkExperienceEntry = { ...DefaultData[Keys.WORK_EXPERIENCE] }
-    newWorkExperienceEntry[Keys.ID] = crypto.randomUUID()
-
-    setWorkExperience((workExperience) => [
-      ...workExperience,
-      newWorkExperienceEntry,
-    ])
-  }
-
-  function handleWorkExperienceDeleted(workExperienceId) {
-    setWorkExperience(
-      workExperience.filter((workExperienceEntry) => {
-        if (workExperienceEntry[Keys.ID] != workExperienceId) {
-          return workExperienceEntry
-        }
-      })
-    )
-  }
-
-  // education functions
-  function handleEducationChange(educationId, fieldName, value) {
-    setEducation(
-      education.map((educationEntry) => {
-        if (educationEntry[Keys.ID] === educationId) {
-          return { ...educationEntry, [fieldName]: value }
-        } else {
-          return educationEntry
-        }
-      })
-    )
-  }
-
-  function handleEducationAdded() {
-    let newEducationEntry = { ...DefaultData[Keys.EDUCATION] }
-    newEducationEntry[Keys.ID] = crypto.randomUUID()
-
-    setEducation((education) => [...education, newEducationEntry])
-  }
-
-  function handleEducationDeleted(educationId) {
-    setEducation(
-      education.filter((educationEntry) => {
-        if (educationEntry[Keys.ID] != educationId) {
-          return educationEntry
-        }
-      })
-    )
-  }
-
   return (
     <>
       <div className='cv'>
         <div className='editor'>
           <Navigation
-            onNavigationClicked={handleNavButtonClick}
+            onNavigationClicked={(button) => {
+              if (button == NavigationButtons.PRINT) {
+                console.log('Pressed print button')
+                return
+              }
+              setSelectedTab(button)
+            }}
             selectedTab={selectedTab}
           />
           {selectedTab === NavigationButtons.PERSONAL_INFORMATION && (
             <PersonalDetailsEditor
-              onInformationChanged={handlePersonalDetailsChange}
-              onSummaryChanged={handleSummaryChange}
+              onInformationChanged={(key, value) =>
+                setPersonalInformation({
+                  ...personalDetails,
+                  [key]: value,
+                })
+              }
+              onSummaryChanged={(e) => setSummary(e.target.value)}
               personalInformation={personalDetails}
               summary={summary}
             />
@@ -129,18 +58,67 @@ function App() {
             <WorkExperienceEditor
               workExperience={workExperience}
               setWorkExperience={setWorkExperience}
-              onWorkExpreienceChanged={handleWorkExperienceChange}
-              onWorkExpreienceDeleted={handleWorkExperienceDeleted}
-              onWorkExpreienceAdded={handleWorkExperienceAdded}
+              onWorkExpreienceChanged={(workExperienceId, fieldName, value) => {
+                setWorkExperience(
+                  workExperience.map((workExperienceEntry) => {
+                    if (workExperienceEntry[Keys.ID] === workExperienceId) {
+                      return { ...workExperienceEntry, [fieldName]: value }
+                    } else {
+                      return workExperienceEntry
+                    }
+                  })
+                )
+              }}
+              onWorkExpreienceDeleted={(workExperienceId) =>
+                setWorkExperience(
+                  workExperience.filter((workExperienceEntry) => {
+                    if (workExperienceEntry[Keys.ID] != workExperienceId) {
+                      return workExperienceEntry
+                    }
+                  })
+                )
+              }
+              onWorkExpreienceAdded={() => {
+                let newWorkExperienceEntry = {
+                  ...DefaultData[Keys.WORK_EXPERIENCE],
+                }
+                newWorkExperienceEntry[Keys.ID] = crypto.randomUUID()
+                setWorkExperience((workExperience) => [
+                  ...workExperience,
+                  newWorkExperienceEntry,
+                ])
+              }}
             />
           )}
           {selectedTab === NavigationButtons.EDUCATION && (
             <EducationEditor
               education={education}
               setEducation={setEducation}
-              onEducationChanged={handleEducationChange}
-              onEducationDeleted={handleEducationDeleted}
-              onEducationAdded={handleEducationAdded}
+              onEducationChanged={(educationId, fieldName, value) =>
+                setEducation(
+                  education.map((educationEntry) => {
+                    if (educationEntry[Keys.ID] === educationId) {
+                      return { ...educationEntry, [fieldName]: value }
+                    } else {
+                      return educationEntry
+                    }
+                  })
+                )
+              }
+              onEducationDeleted={(educationId) =>
+                setEducation(
+                  education.filter((educationEntry) => {
+                    if (educationEntry[Keys.ID] != educationId) {
+                      return educationEntry
+                    }
+                  })
+                )
+              }
+              onEducationAdded={() => {
+                let newEducationEntry = { ...DefaultData[Keys.EDUCATION] }
+                newEducationEntry[Keys.ID] = crypto.randomUUID()
+                setEducation((education) => [...education, newEducationEntry])
+              }}
             />
           )}
           {selectedTab === NavigationButtons.SETTINGS && <Settings />}

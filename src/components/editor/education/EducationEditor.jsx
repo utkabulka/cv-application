@@ -5,6 +5,7 @@ import Header from '../../Header'
 import AddButton from '../AddButton'
 import EducationBlockEditor from './EducationBlockEditor'
 
+// TODO: make one common component for EducationEditor, WorkExperienceEditor
 function EducationEditor({
   education,
   setEducation = () => {},
