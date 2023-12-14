@@ -38,28 +38,28 @@ function ExperienceBlockEditor({
         label='Company'
         placeholder='Where did you work?'
         isRequired={true}
-        value={experience[Keys.WORK_PLACE]}
-        name={Keys.WORK_PLACE}
+        value={experience[Keys.WORK_COMPANY]}
+        name={Keys.WORK_COMPANY}
         onChange={(e) => {
-          onChange(experience[Keys.ID], Keys.WORK_PLACE, e.target.value)
+          onChange(experience[Keys.ID], Keys.WORK_COMPANY, e.target.value)
         }}
       />
       <div className='date-range'>
         <DateSelector
           label='Started'
           isRequired={true}
-          value={experience[Keys.WORK_START_DATE]}
-          name={Keys.WORK_START_DATE}
+          value={experience[Keys.START_DATE]}
+          name={Keys.START_DATE}
           onDatePicked={(e) => {
-            onChange(experience[Keys.ID], Keys.WORK_START_DATE, e.target.value)
+            onChange(experience[Keys.ID], Keys.START_DATE, e.target.value)
           }}
         />
         <DateSelector
           label='Finished'
-          value={experience[Keys.WORK_END_DATE]}
-          name={Keys.WORK_END_DATE}
+          value={experience[Keys.END_DATE]}
+          name={Keys.END_DATE}
           onDatePicked={(e) => {
-            onChange(experience[Keys.ID], Keys.WORK_END_DATE, e.target.value)
+            onChange(experience[Keys.ID], Keys.END_DATE, e.target.value)
           }}
         />
       </div>
@@ -67,11 +67,11 @@ function ExperienceBlockEditor({
         label='Summary'
         placeholder='What did you do?'
         isRequired={true}
-        value={experience[Keys.WORK_SUMMARY]}
-        name={Keys.WORK_SUMMARY}
+        value={experience[Keys.SUMMARY]}
+        name={Keys.SUMMARY}
         height={100}
         onChange={(e) => {
-          onChange(experience[Keys.ID], Keys.WORK_SUMMARY, e.target.value)
+          onChange(experience[Keys.ID], Keys.SUMMARY, e.target.value)
         }}
       />
     </div>

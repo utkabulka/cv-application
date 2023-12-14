@@ -1,8 +1,9 @@
+// common
 export const SUMMARY = 'summary'
 export const ID = 'id'
-
-// common
 export const LOCATION = 'location'
+export const START_DATE = 'startDate'
+export const END_DATE = 'stopDate'
 
 // Personal information
 export const FULL_NAME = 'fullName'
@@ -14,7 +15,9 @@ export const WEBSITE = 'website'
 // Work experience
 export const WORK_EXPERIENCE = 'workExperience'
 export const JOB_TITLE = 'jobTitle'
-export const WORK_PLACE = 'workPlace'
-export const WORK_START_DATE = 'workStartDate'
-export const WORK_END_DATE = 'workStopDate'
-export const WORK_SUMMARY = 'workSummary'
+export const WORK_COMPANY = 'workCompany'
+
+// education
+export const EDUCATION = 'education'
+export const DEGREE = 'degree'
+export const SCHOOL = 'school'

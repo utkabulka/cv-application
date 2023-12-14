@@ -6,16 +6,16 @@ function ExperienceBlock({ experience }) {
   return (
     <div className='experience-block'>
       <h1>{experience[Keys.JOB_TITLE]}</h1>
-      <h2>{experience[Keys.WORK_PLACE]}</h2>
-      {experience[Keys.WORK_START_DATE] == '' ? null : (
+      <h2>{experience[Keys.WORK_COMPANY]}</h2>
+      {experience[Keys.START_DATE] == '' ? null : (
         <p>
-          From {experience[Keys.WORK_START_DATE]} to{' '}
-          {experience[Keys.WORK_END_DATE] == ''
+          From {experience[Keys.START_DATE]} to{' '}
+          {experience[Keys.END_DATE] == ''
             ? 'present day'
-            : experience[Keys.WORK_END_DATE]}
+            : experience[Keys.END_DATE]}
         </p>
       )}
-      <p>{experience[Keys.WORK_SUMMARY]}</p>
+      <p>{experience[Keys.SUMMARY]}</p>
     </div>
   )
 }

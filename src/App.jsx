@@ -25,6 +25,7 @@ function App() {
   const [workExperience, setWorkExperience] = useState(
     SampleData[Keys.WORK_EXPERIENCE]
   )
+  const [education, setEducation] = useState(SampleData[Keys.EDUCATION])
 
   function handleNavButtonClick(button) {
     if (button == NavigationButtons.PRINT) {
