@@ -7,7 +7,7 @@
 .cv {
   display: flex;
   flex-direction: row;
-  align-items: baseline;
+  align-items: flex-start;
 }
 
 .navigation,
@@ -29,20 +29,38 @@
 }
 
 .editor-section {
-  padding: 8px 20px 8px 20px;
+  padding: 12px 20px 12px 20px;
   margin-bottom: 16px;
 }
 
 .editor-section-controls {
   display: flex;
   justify-content: right;
-  align-items: center;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.editor-section-delete,
+.handle {
+  border-radius: 8px;
 }
 
 .editor-section-delete {
-  background-color: #ffb5b5;
-  color: #960000;
+  display: flex;
   flex: 0 0 auto;
+  color: #960000;
+  background-color: #ffb5b5;
+}
+
+.handle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 0 auto;
+  border: 1px solid #e8e8e8;
+}
+.handle:hover {
+  cursor: grab;
 }
 
 .add-element-button {
@@ -55,13 +73,7 @@
   width: 100%;
 }
 
-.handle {
-  flex: 1 0 auto;
-}
 
-.handle:hover {
-  cursor: grab;
-}
 
 .date-range {
   display: flex;
