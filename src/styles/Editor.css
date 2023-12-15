@@ -1,0 +1,122 @@
+.required {
+  margin-left: 8px;
+  font-size: 12px;
+  color: #960000;
+}
+
+.navigation,
+.editor-section,
+.add-element-button {
+  border-radius: 12px;
+}
+
+.navigation,
+.editor-section,
+.add-element-button,
+.cv-output {
+  box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000033;
+  background-color: white;
+}
+
+/* editor */
+.editor {
+  min-width: 400px;
+}
+
+.editor-section {
+  padding: 12px 20px 12px 20px;
+  margin-bottom: 16px;
+}
+
+.editor-section h1 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.editor-section-controls {
+  display: flex;
+  justify-content: right;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.editor-section-delete,
+.handle {
+  border-radius: 8px;
+}
+
+.editor-section-delete {
+  display: flex;
+  flex: 0 0 auto;
+  color: #960000;
+  background-color: #ffb5b5;
+}
+
+.handle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 0 auto;
+  border: 1px solid #e8e8e8;
+}
+.handle:hover {
+  cursor: grab;
+}
+
+.add-element-button {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  min-height: 60px;
+  width: 100%;
+}
+
+.date-range {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+}
+
+/* text input */
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+  resize: vertical;
+}
+
+.empty-required-input {
+  border: 1px solid #960000;
+}
+.empty-required-input::placeholder {
+  color: #9600008e;
+}
+
+.input-block {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+  flex: 1;
+  padding: 6px 0 6px 0;
+}
+
+/* navigation menu */
+.navigation {
+  display: flex;
+  background-color: white;
+  margin-bottom: 16px;
+  border-radius: 5px;
+  overflow: clip;
+}
+
+.navigation button {
+  flex: 1;
+  background-color: #ffffff00;
+  color: #080808;
+}
+
+.selected {
+  background-color: #aabfff;
+}

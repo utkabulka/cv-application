@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
 import { ReactSortable } from 'react-sortablejs'
 import * as Keys from '../../../constants/Keys'
-import Header from '../../Header'
 import AddButton from '../AddButton'
 import WorkExperienceBlockEditor from './WorkExperienceBlockEditor'
 
@@ -16,7 +15,7 @@ function WorkExperienceEditor({
   return (
     <>
       <div className='editor-section'>
-        <Header text='Work experience' />
+        <h1>Work experience</h1>
       </div>
       <ReactSortable
         list={workExperience}

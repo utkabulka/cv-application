@@ -1,6 +1,6 @@
 import { SvgIcon } from '@mui/material'
 import PropTypes from 'prop-types'
-import '../../styles/editor/NavigationButton.css'
+import '../../styles/Editor.css'
 
 function Button({ icon = null, onClick = () => {}, isSelected = false }) {
   return (

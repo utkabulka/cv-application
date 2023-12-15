@@ -1,11 +1,10 @@
 import PropTypes from 'prop-types'
-import Header from '../Header'
 
 function Settings() {
   return (
     <>
       <div className='editor-section'>
-        <Header text='Settings' />
+        <h1>Settings</h1>
       </div>
       <div className='editor-section'></div>
     </>

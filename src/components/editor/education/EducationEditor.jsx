@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
 import { ReactSortable } from 'react-sortablejs'
 import * as Keys from '../../../constants/Keys'
-import Header from '../../Header'
 import AddButton from '../AddButton'
 import EducationBlockEditor from './EducationBlockEditor'
 
@@ -16,7 +15,7 @@ function EducationEditor({
   return (
     <>
       <div className='editor-section'>
-        <Header text='Education' />
+        <h1>Education</h1>
       </div>
       <ReactSortable list={education} setList={setEducation} handle='.handle'>
         {education.map((educationEntry) => (

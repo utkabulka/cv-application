@@ -5,7 +5,7 @@ import SettingsIcon from '@mui/icons-material/Settings'
 import WorkIcon from '@mui/icons-material/Work'
 import PropTypes from 'prop-types'
 import * as NavigationButtons from '../../constants/NavigationButtons'
-import '../../styles/editor/Navigation.css'
+import '../../styles/Editor.css'
 import NavigationButton from './NavigationButton'
 
 function Navigation({ onNavigationClicked = () => {}, selectedTab = '' }) {

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import '../../styles/editor/Input.css'
+import '../../styles/Editor.css'
 
 function TextArea({
   label = 'Text area label',

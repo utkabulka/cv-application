@@ -4,7 +4,6 @@ import PhoneIcon from '@mui/icons-material/Phone'
 import RoomIcon from '@mui/icons-material/Room'
 import PropTypes from 'prop-types'
 import * as Keys from '../../constants/Keys'
-import Header from '../Header'
 import InputField from './InputField'
 import TextArea from './TextArea'
 
@@ -17,7 +16,7 @@ function PersonalDetailsEditor({
   return (
     <>
       <div className='editor-section'>
-        <Header text='Personal details' />
+        <h1>Personal details</h1>
       </div>
       <div className='editor-section'>
         <InputField
