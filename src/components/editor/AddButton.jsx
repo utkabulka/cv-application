@@ -3,11 +3,9 @@ import PropTypes from 'prop-types'
 
 function AddButton({ onClick = () => {} }) {
   return (
-    <div className='editor-section add-element-button'>
-      <button onClick={onClick}>
-        <AddCircleIcon />
-      </button>
-    </div>
+    <button className='add-element-button' onClick={onClick}>
+      <AddCircleIcon />
+    </button>
   )
 }
 

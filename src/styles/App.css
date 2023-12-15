@@ -11,12 +11,14 @@
 }
 
 .navigation,
-.editor-section {
+.editor-section,
+.add-element-button {
   border-radius: 12px;
 }
 
 .navigation,
 .editor-section,
+.add-element-button,
 .cv-output {
   box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000033;
   background-color: white;
@@ -38,7 +40,19 @@
 }
 
 .editor-section-delete {
+  background-color: #ffb5b5;
+  color: #960000;
   flex: 0 0 auto;
+}
+
+.add-element-button {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  min-height: 60px;
+  width: 100%;
 }
 
 .handle {
@@ -47,12 +61,6 @@
 
 .handle:hover {
   cursor: grab;
-}
-
-.add-element-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .date-range {
